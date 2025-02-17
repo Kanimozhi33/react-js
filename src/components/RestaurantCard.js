@@ -2,21 +2,21 @@ import { CDN_URL } from "../utils/constants";
 
 const RestaurantCard = (props) =>{
     const {resData} = props;
-    const {imageId} = resData;
-    const {text,rating,delivery,price} = resData?.action;
-
+    
+    const {name,avgRating,cloudinaryImageId,costForTwo} = resData?.info;
+    const {deliveryTime} = resData?.info?.sla;
+    const {cuisines} = resData?.info;
     return(
         <div className="res-card">
             <img className="res-image"
                 alt="res-logo"
-                src={CDN_URL+imageId}></img>
+                src={CDN_URL+cloudinaryImageId}></img>
                 
-                <h3>{text}</h3>
-                <h3>price:{price}</h3>
-                <h3>delivery time:{delivery}</h3>
-                <h3>rating:
-                    {rating}
-                </h3>
+                <h3>{name}</h3>
+                <h3>{cuisines.join(", ")}</h3>
+                <h3>price for two:{costForTwo}</h3>
+                <h3>delivery time:{deliveryTime} mins</h3>
+                <h3>average rating:{avgRating}</h3>                cd C:\Users\kanim\OneDrive\Documents\react
                 
                 
                 

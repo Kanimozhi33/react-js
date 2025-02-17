@@ -42,3 +42,9 @@ two tyrpes of export/import:
 
 * for the same component you can also use both default and named exports
 
+* REACT HOOKS:
+special utility functions of react written by fb developers
+normal js utitlity fn
+types:
+1.useState() - to give generate superpowerful state variable, maintains a  state to the component.
+2.useEffect() -  
