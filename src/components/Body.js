@@ -23,11 +23,11 @@ const [searchtext, setsearchtext] = useState("");
    };
 
    //conditional rendering: if the list of restaurants is empty, show the shimmer effect
-  
+    if (listOfRestaurant.length === 0) {
+       return <Shimmer/>;
+    }
 
-
-
-    return listOfRestaurant.length === 0? (<Shimmer/>) :(
+    return (
         <div className="body">
             <div className="filter">
                 <div className="search-container">
