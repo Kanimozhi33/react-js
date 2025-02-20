@@ -5,17 +5,40 @@ class UserClass extends React.Component {
     constructor(props){
         super(props);
 
-        console.log(props);
+        this.state = {
+            count: 0,
+            count1: 1,
+            count2: 2
+        };
+        console.log("constructor is called");
     }
-
+    
     render(){
+        const {name,location} = this.props;
+        const {count,count1} = this.state;
+        console.log("render is called");
         return (
             <div className="user-card-class">
-            <h2>
-                Name: {this.props.name}
+                <h1>count = {count}</h1>
+                <button onClick={() =>
+                    {
+                        this.setState({
+                            count : this.state.count +1
+                        })
+
+                    }
+                }>count increase</button>
+                <h1>view counts = {count1}</h1>
+                <button onClick={() =>{
+                    this.setState({
+                        count1: this.state.count1 +5
+                    })
+                }}>views</button>
+            <h2> 
+                Name: {name} 
             </h2>
             <h3>
-                Location: Nilgiris<br></br>
+                Location: {location}Nilgiris<br></br>
                 Professsion: Software Developer<br></br>
             </h3>
         </div>
