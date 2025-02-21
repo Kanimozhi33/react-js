@@ -1,44 +1,48 @@
 import React from "react"
-
+import { Component} from "react";
 
 class UserClass extends React.Component {
     constructor(props){
         super(props);
 
         this.state = {
-            count: 0,
-            count1: 1,
-            count2: 2
+            userInfo: {
+                login :"name",
+                id: "default location"
+            },
+            
         };
-        console.log("constructor is called");
+       
     }
     
+    async componentDidMount(){
+        const data = await fetch("https://api.github.com/users/kanimozhi");
+        const json = await data.json();
+        console.log(json);
+
+
+        this.setState(
+
+        {
+            userInfo:json
+        });
+
+    }
+
+   
     render(){
-        const {name,location} = this.props;
-        const {count,count1} = this.state;
-        console.log("render is called");
+        const {login,id} = this.state.userInfo;
+       
         return (
             <div className="user-card-class">
-                <h1>count = {count}</h1>
-                <button onClick={() =>
-                    {
-                        this.setState({
-                            count : this.state.count +1
-                        })
-
-                    }
-                }>count increase</button>
-                <h1>view counts = {count1}</h1>
-                <button onClick={() =>{
-                    this.setState({
-                        count1: this.state.count1 +5
-                    })
-                }}>views</button>
+                
+                
+                
             <h2> 
-                Name: {name} 
+                Name: {login} 
             </h2>
             <h3>
-                Location: {location}Nilgiris<br></br>
+                Location: {id}<br></br>
                 Professsion: Software Developer<br></br>
             </h3>
         </div>

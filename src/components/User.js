@@ -1,26 +1,21 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
-class User extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            count:0,
-            count1:1
-        }
-    }
+const User = () =>{
 
+    const [count, setCount] = useState(0);
 
+    useEffect(() => {},[])
 
-    render(){
         return (
         <div className="user-card">
-            <h1>count = {this.state.count}</h1>
-            <botton onClick={()=>{
-                this.setState({count: this.state.count +3})
-            }}>increase</botton>
+            <h1>count = {count}</h1>
+            <button onClick={()=>{
+                setCount(count + 1);
+            }}>increase</button>
             
             <h2>
-                Name: {this.props.name}
+                Name: kanimozhi
             </h2>
             <h3>
                 Location: Nilgiris<br></br>
@@ -28,7 +23,7 @@ class User extends React.Component{
             </h3>
         </div>
         ); }
-}
+
 
     
   
