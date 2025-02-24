@@ -12,7 +12,9 @@ class  About extends React.Component{
         console.log("componentdidmount of about(parent)");
     }
 
-
+    componentWillUnmount(){
+        console.log("happend when the mounting disappears ");
+    }
     render(){
         
     return (
@@ -21,7 +23,7 @@ class  About extends React.Component{
                 About
             </h1>
             <h2>this is the react learnings</h2>
-            <User name={"kanimozhi"}/>
+            
             <UserClass name ={"Kanimozhi VM (class)"} location={"the nilgiris"}/>
             
         </div>

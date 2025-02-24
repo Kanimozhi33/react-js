@@ -31,7 +31,7 @@ class UserClass extends React.Component {
 
    
     render(){
-        const {login,id} = this.state.userInfo;
+        const {login,id,avatar_url} = this.state.userInfo;
        
         return (
             <div className="user-card-class">
@@ -40,7 +40,9 @@ class UserClass extends React.Component {
                 
             <h2> 
                 Name: {login} 
+
             </h2>
+            <img src = {avatar_url} alt="avatar img"></img>
             <h3>
                 Location: {id}<br></br>
                 Professsion: Software Developer<br></br>
