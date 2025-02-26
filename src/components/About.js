@@ -13,17 +13,18 @@ class  About extends React.Component{
     }
 
     componentWillUnmount(){
+        
         console.log("happend when the mounting disappears ");
     }
     render(){
         
     return (
         <div>
-            <h1>
+            <h1> 
                 About
             </h1>
             <h2>this is the react learnings</h2>
-            
+            <User/>
             <UserClass name ={"Kanimozhi VM (class)"} location={"the nilgiris"}/>
             
         </div>

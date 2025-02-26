@@ -5,6 +5,13 @@ const User = () =>{
 
     const [count, setCount] = useState(0);
 
+    useEffect(() =>{
+        setInterval(() => {
+            console.log("rodeo and sky sleeping");
+        },1000
+            );
+    },[]);
+
     useEffect(() => {},[])
 
         return (
