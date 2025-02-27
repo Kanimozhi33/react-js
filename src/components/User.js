@@ -6,15 +6,20 @@ const User = () =>{
     const [count, setCount] = useState(0);
 
     useEffect(() =>{
-        setInterval(() => {
+        const timer =  setInterval(() => {
             console.log("rodeo and sky sleeping");
         },1000
             );
+            return () =>{
+                clearInterval(timer);
+            }
+            
     },[]);
 
     useEffect(() => {},[])
 
         return (
+            
         <div className="user-card">
             <h1>count = {count}</h1>
             <button onClick={()=>{

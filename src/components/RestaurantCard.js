@@ -16,7 +16,7 @@ const RestaurantCard = (props) =>{
                 <h3>{cuisines.join(", ")}</h3>
                 <h3>price for two:{costForTwo}</h3>
                 <h3>delivery time:{deliveryTime} mins</h3>
-                <h3>average rating:{avgRating}</h3>                cd C:\Users\kanim\OneDrive\Documents\react
+                <h3>average rating:{avgRating}</h3>                
                 
                 
                 
