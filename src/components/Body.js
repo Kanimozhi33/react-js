@@ -2,7 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useState , useEffect} from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
- 
+import useOnlineStatus from "../utils/useOnlineStatus"; 
 
 
 const Body = () =>{
@@ -22,6 +22,13 @@ const [searchtext, setsearchtext] = useState("");
         setListOfRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
    };
+
+const onlineStatus = useOnlineStatus();
+   if (onlineStatus === false) 
+     return( <h1>
+        looks like u r offline, pls check your internet connection
+     </h1>);
+   
 
    //conditional rendering: if the list of restaurants is empty, show the shimmer effect
     if (listOfRestaurant.length === 0) {

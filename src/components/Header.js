@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router";
-
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () =>{
 
@@ -10,9 +10,7 @@ const Header = () =>{
 // if no dependancy array , useeffect ia been called every componenet render
 // if the depency array is empty = [] , useeffect is called only once
 // if dependancy is not empty = [btnName], useeffect is called every time the value of btnName changes(updated)
-    useEffect(() => {
-        console.log("useeffect has been called");
-    },[btnName]);
+    const onlineStatus = useOnlineStatus();
 
 
     return (
@@ -23,7 +21,14 @@ const Header = () =>{
             <div className="nav-items">
                 <ul>
                     <li>
+                        online status: {onlineStatus ? "👍🏻" : "👎🏻"};
+                    </li>
+                    
+                    <li>
                         <Link to="/">Home</Link></li>
+                    <li>
+                        <Link to= "/grocery">Groceries</Link>
+                    </li>
                     <li>
                         <Link to= "/about">About</Link></li>
                     <li>

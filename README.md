@@ -1,4 +1,25 @@
 # react-js
+# parcel
+-dev build
+-local server
+-HMr = hot module replacement
+-file watching algorithms - written in c++
+-caching - faster builds
+-image optimization
+-minification
+-bundling
+-compress
+-consistant hashing
+-code splitting 
+-differential bundling - support older browsers
+-diagnostic
+-error handling
+-https
+-tree shaking - remove unused code
+-different dev and prod bundles
+
+
+
 
 /**
  * header
