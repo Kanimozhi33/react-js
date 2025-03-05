@@ -1,24 +1,25 @@
 {
     "name": "react",
     "version": "1.0.0",
-  
     "scripts": {
-      "start": "parcel index.html",
-      "build": "parcel build index.html",
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "parcel index.html",
+        "build": "parcel build index.html",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "kanimozhi",
     "license": "ISC",
     "description": "",
     "devDependencies": {
-      "parcel": "^2.13.3",
-      "process": "^0.11.10"
+        "parcel": "^2.13.3",
+        "process": "^0.11.10"
     },
     "dependencies": {
-      "react": "^18.0.0",
-      "react-dom": "^18.0.0"
+        "@tailwindcss/postcss": "^4.0.9",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "tailwindcss": "^4.0.9"
     },
     "browserslist": [
-      "last 2 versions"
+        "last 2 versions"
     ]
-  }
+}
