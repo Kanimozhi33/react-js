@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
-import { Link } from "react-router";
+import { Link } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () =>{
