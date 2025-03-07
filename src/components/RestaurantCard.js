@@ -7,7 +7,7 @@ const RestaurantCard = (props) =>{
     const {deliveryTime} = resData?.info?.sla;
     const {cuisines} = resData?.info;
     return(
-        <div className="res-card bg-gray-200  m-4 p-4 w-[250px]  hover:bg-gray-400">
+        <div className="res-card bg-gray-200  m-4 p-4 w-[250px] rounded-lg hover:bg-gray-400">
             <img className="res-image rounded-lg font-bold py-2 text-2xl"
                 alt="res-logo"
                 src={CDN_URL+cloudinaryImageId}></img>
@@ -20,15 +20,31 @@ const RestaurantCard = (props) =>{
                 
                 </div>
                 
-                
-                
-                
-
-                
-            
+         
         </div>
     )
 }
+
+export const withDiscount = (RestaurantCard)=>{
+    return (props) =>{
+
+            return (
+                <div>
+                    <label>
+                         promoted{"items with discount"}
+                    </label>
+                    <RestaurantCard {...props}/>
+                </div>
+
+
+            )
+
+
+    }
+
+
+}
+
 
 
 export default RestaurantCard;

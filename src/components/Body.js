@@ -3,26 +3,30 @@ import { useState , useEffect} from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus"; 
-
+import { withDiscount } from "./RestaurantCard";
 
 const Body = () =>{
-    console.log("body is rendered");
+    console.log("body is rendered" );
 const [listOfRestaurant,setListOfRestaurant] = useState([]);
  const [filteredRestaurant,setFilteredRestaurant] = useState([]);
 
 const [searchtext, setsearchtext] = useState("");
+
+const RestaurantCardwithDiscount = withDiscount(RestaurantCard);
+
+
     useEffect(() => {
         fetchData();
     },[]);
     const fetchData = async () =>{
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.3550296&lng=76.80023659999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.4470564&lng=77.6839768&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
 
         console.log(json);
         setListOfRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
    };
-
+console.log(listOfRestaurant);
 const onlineStatus = useOnlineStatus();
    if (onlineStatus === false) 
      return( <h1>
@@ -73,7 +77,12 @@ const onlineStatus = useOnlineStatus();
             <div className="res-container flex flex-wrap">
             {filteredRestaurant.map((restaurant) => (
                 <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
-                    <RestaurantCard resData={restaurant} />
+                {   
+                  ((restaurant.info.aggregatedDiscountInfoV3) === null) ? (<RestaurantCardwithDiscount  resData={restaurant} /> ):
+                   (<RestaurantCard resData={restaurant} />)
+                }
+
+                   
                 </Link>
                 ))}
             
