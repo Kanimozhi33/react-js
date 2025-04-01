@@ -78,7 +78,7 @@ const onlineStatus = useOnlineStatus();
             {filteredRestaurant.map((restaurant) => (
                 <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
                 {   
-                  ((restaurant.info.aggregatedDiscountInfoV3) === null) ? (<RestaurantCardwithDiscount  resData={restaurant} /> ):
+                  ((restaurant.info.aggregatedDiscountInfoV3) != null) ? (<RestaurantCardwithDiscount  resData={restaurant} /> ):
                    (<RestaurantCard resData={restaurant} />)
                 }
 

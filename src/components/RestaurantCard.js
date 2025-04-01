@@ -30,8 +30,8 @@ export const withDiscount = (RestaurantCard)=>{
 
             return (
                 <div>
-                    <label>
-                         promoted{"items with discount"}
+                    <label className="absolute bg-green-600 rounded-lg p-2 m-2 text-center font-bold text-white">
+                         offers available
                     </label>
                     <RestaurantCard {...props}/>
                 </div>
