@@ -55,7 +55,7 @@ const onlineStatus = useOnlineStatus();
                      
                     
                      onClick={()=>{
-                         console.log(searchtext);
+                         
  
                          const filteredRestaurant = listOfRestaurant.filter((res)=>res.info.name.toLowerCase().includes(searchtext.toLowerCase()) );
                          setFilteredRestaurant(filteredRestaurant);
