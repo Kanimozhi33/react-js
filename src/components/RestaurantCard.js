@@ -14,9 +14,9 @@ const RestaurantCard = (props) =>{
                 <div className=" text-2xl">
                     <h3 className="font-bold">{name}</h3>
                 <h3 className="cuisines text-3xl font-bold text-red-800">{cuisines.join(", ")}</h3>
-                <h3 className="price font-serif ">price for two:{costForTwo}</h3>
-                <h3 className="font-serif">delivery time:{deliveryTime} mins</h3>
-                <h3 className="font-serif">average rating:{avgRating}</h3>                
+                <h3 className="price font-sans text-xl ">price: {costForTwo}</h3>
+                <h3 className="font-sans text-xl">delivery time: {deliveryTime} mins</h3>
+                <h3 className="font-sans text-xl">average rating: {avgRating}</h3>                
                 
                 </div>
                 
