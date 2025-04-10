@@ -3,12 +3,12 @@ import { useState } from "react";
 
 
 
-const ResCategory = ({data})=> {
+const ResCategory = ({data,show,setExpandIndex})=> {
 
-    const [show,setShow] = useState(false);
+    
 
     const handleClick = () => {
-        setShow(!show);
+        setExpandIndex();
     }
 
     return (<div className="text-center items-center flex flex-col w-full">
