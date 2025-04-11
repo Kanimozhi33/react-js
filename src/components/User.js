@@ -7,7 +7,7 @@ const User = () =>{
 
     useEffect(() =>{
         const timer =  setInterval(() => {
-            console.log("rodeo and sky sleeping");
+            // console.log("rodeo and sky sleeping");
         },1000
             );
             return () =>{

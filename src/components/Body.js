@@ -6,7 +6,7 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import { withDiscount } from "./RestaurantCard";
 
 const Body = () =>{
-    console.log("body is rendered" );
+    
 const [listOfRestaurant,setListOfRestaurant] = useState([]);
  const [filteredRestaurant,setFilteredRestaurant] = useState([]);
 
@@ -22,11 +22,11 @@ const RestaurantCardwithDiscount = withDiscount(RestaurantCard);
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.4470564&lng=77.6839768&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
 
-        console.log(json);
+        
         setListOfRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
    };
-console.log(listOfRestaurant);
+
 const onlineStatus = useOnlineStatus();
    if (onlineStatus === false) 
      return( <h1>

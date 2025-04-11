@@ -2,6 +2,7 @@ import React from "react";
 import User from "./User";
 import UserClass from "./UserClass";
 import { Component} from "react";
+import UserContext from "../utils/UserContext";
 class  About extends React.Component{
 
     constructor(props){
@@ -21,8 +22,13 @@ class  About extends React.Component{
     return (
         <div>
             <h1> 
-                About
+                About class component
             </h1>
+            <div>logged in user
+                <UserContext.Consumer>
+                    {(loggedInUser) => console.log(loggedInUser)}
+                </UserContext.Consumer>
+            </div>
             <h2>this is the react learnings</h2>
             <User/>
             <UserClass name ={"Kanimozhi VM (class)"} location={"the nilgiris"}/>
