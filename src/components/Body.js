@@ -1,9 +1,11 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState , useEffect} from "react";
+import { useState , useEffect , useContext} from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus"; 
+import UserContext from "../utils/UserContext";
 import { withDiscount } from "./RestaurantCard";
+import UserContext from "../utils/UserContext";
 
 const Body = () =>{
     
@@ -33,7 +35,7 @@ const onlineStatus = useOnlineStatus();
         looks like u r offline, pls check your internet connection
      </h1>);
    
-
+   const {loggedInUser,setUserName } = useContext(UserContext);
    //conditional rendering: if the list of restaurants is empty, show the shimmer effect
     if (listOfRestaurant.length === 0) {
        return <Shimmer/>;
@@ -64,16 +66,32 @@ const onlineStatus = useOnlineStatus();
                          
                      }
                  </div>
+                 
                  <button className="filter-btn p-2 m-0.5 bg-green-400 border-black rounded-lg" onClick={()=>
                  {
                      const filteredList = listOfRestaurant.filter(
-                     (res)=> res.info.avgRating > 4.2) ;
+                     (res)=> res.info.avgRating > 4.3) ;
                      setFilteredRestaurant(filteredList);
                      
-                     }}>Top Rated Restaurant</button>
+                     }}>Top Rated Restaurant "(more than 4.3)"</button>
+                     <div>
+                        <label>username:
+
+                        </label>
+                        <input className="border-black border-2 p-2"
+                        value={loggedInUser}
+                        onChange={(e) => setUserName(e.target.value)
+
+                        }>
+                        </input>
+                     </div>
                     </div>
                     </div>
                     
+
+               
+
+
             <div className="res-container flex flex-wrap">
             {filteredRestaurant.map((restaurant) => (
                 <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
