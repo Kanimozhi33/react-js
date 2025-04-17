@@ -28,8 +28,6 @@ useEffect(() => {
     setUserName(data.name);
 },[]);
 
-
-
     return (
         <UserContext.Provider value={{loggedInUser: userName, setUserName} }>
             <div className="app">
