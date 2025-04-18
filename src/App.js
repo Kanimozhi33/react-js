@@ -7,10 +7,12 @@ import Contact from "./components/Contact";
 import Feedback from "./components/Feedback";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Cart from "./components/Cart";
 import Shimmer from "./components/Shimmer";
 import { useState, useEffect } from "react";
 import UserContext from "./utils/UserContext";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
+import Cart from "./components/Cart";
 
 
 
@@ -71,6 +73,11 @@ const appRouter = createBrowserRouter([
             {
                 path: "/restaurants/:resId",
                 element: <RestaurantMenu/>
+            }
+            ,
+            {
+                path: "/cart",
+                element: <Cart/>
             }
 
         ],
