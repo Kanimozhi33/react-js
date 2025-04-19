@@ -79,11 +79,11 @@ const appRouter = createBrowserRouter([
                 path: "/restaurants/:resId",
                 element: <RestaurantMenu/>
             }
-            ,
-            {
-                path: "/cart",
-                element: <Cart/>
-            }
+            // ,
+            // {
+            //     path: "/cart",
+            //     element: <Cart/>
+            // }
 
         ],
         errorElement: <Error/>
