@@ -7,13 +7,14 @@ import Contact from "./components/Contact";
 import Feedback from "./components/Feedback";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
-import Cart from "./components/Cart";
+import Cart from "./components/cartSlice";
 import Shimmer from "./components/Shimmer";
 import { useState, useEffect } from "react";
 import UserContext from "./utils/UserContext";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
-import Cart from "./components/Cart";
+import Cart from "./components/cartSlice";
 import { Provider } from "react-redux"; 
+import appStore from "./utils/appStore";
 
 
 const Grocery = lazy(() => import("./components/Grocery"));
@@ -32,7 +33,7 @@ useEffect(() => {
 
     return (
 
-        <Provider store ={}>
+        <Provider store ={appStore}>
 
         <UserContext.Provider value={{loggedInUser: userName, setUserName} }>
             <div className="app">
