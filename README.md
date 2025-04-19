@@ -73,3 +73,13 @@ types:
 * routing in web apps- 2types
 - client side routing
 - server side routing 
+
+
+
+# redux toolkit:
+* install libraries - @reduxjs/toolkit and react-redux
+* build our store
+* connect store to app
+* slice(cartslice)
+* dispatch(action)
+* selector

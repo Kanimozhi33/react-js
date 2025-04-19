@@ -13,7 +13,7 @@ import { useState, useEffect } from "react";
 import UserContext from "./utils/UserContext";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 import Cart from "./components/Cart";
-
+import { Provider } from "react-redux"; 
 
 
 const Grocery = lazy(() => import("./components/Grocery"));
@@ -31,6 +31,9 @@ useEffect(() => {
 },[]);
 
     return (
+
+        <Provider store ={}>
+
         <UserContext.Provider value={{loggedInUser: userName, setUserName} }>
             <div className="app">
             <Header/>
@@ -38,6 +41,7 @@ useEffect(() => {
         </div>
     
             </UserContext.Provider>
+            </Provider>
         )
         
 }
