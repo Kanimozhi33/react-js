@@ -3,16 +3,15 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import About from "./components/About";
+import Cart from "./components/Cart"
 import Contact from "./components/Contact";
 import Feedback from "./components/Feedback";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
-import Cart from "./components/cartSlice";
 import Shimmer from "./components/Shimmer";
 import { useState, useEffect } from "react";
 import UserContext from "./utils/UserContext";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
-import Cart from "./components/cartSlice";
 import { Provider } from "react-redux"; 
 import appStore from "./utils/appStore";
 
@@ -79,11 +78,11 @@ const appRouter = createBrowserRouter([
                 path: "/restaurants/:resId",
                 element: <RestaurantMenu/>
             }
-            // ,
-            // {
-            //     path: "/cart",
-            //     element: <Cart/>
-            // }
+            ,
+            {
+                path: "/cart",
+                element: <Cart/>
+            }
 
         ],
         errorElement: <Error/>
