@@ -9,6 +9,10 @@ const cartSlice = createSlice({
         addItem: (state, action) =>{
             state.item.push(action.payload);
             // mutating the state directly here
+            // redux uses immer.js under the hood to make sure that the state is not mutated directly
+            // immer.js creates a copy of the state and then applies the changes to the copy and returns the new state
+            // so we can mutate the state directly here
+            // immer is a library that allows you to work with immutable state in a more convenient way
         },
         removeItem: (state) =>{
             state.item.pop();
@@ -17,7 +21,7 @@ const cartSlice = createSlice({
             state.item.length = 0;
         }
     
-
+ 
     }
 });
 
