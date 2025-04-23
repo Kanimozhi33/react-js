@@ -83,3 +83,22 @@ types:
 * slice(cartslice)
 * dispatch(action)
 * selector
+
+
+# testing:
+* diff types of testing a developer can do:
+* unit testing - testing react component in isolation(i.e testing only my header component.)
+* integration testing
+* end-end testing(e-e testing)
+ 
+ # setting up testing:
+ * install react testing library
+ * install jest
+ * install babel dependancies - in jest website
+ * configure babel
+ * configure parcel config file to disable the babel transpiler in parcel
+ * npx jest --init
+ * install jsdom library - command in react testing library - setup-jest >28 versions
+ 
+
+   
