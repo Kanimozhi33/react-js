@@ -107,3 +107,6 @@ types:
   * headers.spec.ts
    
    "__" "dunder methpd" tests
+ * then install @babel/preset-react to make JSX work in testcases...
+ * include @babel/preset-react into bable config
+ * install npm i -D @testing-library/jest-dom(expect(heading).toBeInTheDocument() - has to work)
