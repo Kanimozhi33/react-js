@@ -100,5 +100,10 @@ types:
  * npx jest --init
  * install jsdom library - command in react testing library - setup-jest >28 versions
  
-
+  # testing files 
+  * headers.test.ts
+  * headers.spec.js
+  * headers.test.js
+  * headers.spec.ts
    
+   "__" "dunder methpd" tests
