@@ -1,11 +1,11 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard from "../RestaurantCard";
 import { useState , useEffect , useContext} from "react";
-import Shimmer from "./Shimmer";
+import Shimmer from "../Shimmer";
 import { Link } from "react-router";
-import useOnlineStatus from "../utils/useOnlineStatus"; 
-import UserContext from "../utils/UserContext";
-import { withDiscount } from "./RestaurantCard";
-import UserContext from "../utils/UserContext";
+import useOnlineStatus from "../../utils/useOnlineStatus"; 
+import UserContext from "../../utils/UserContext";
+import { withDiscount } from "../RestaurantCard";
+import UserContext from "../../utils/UserContext";
 
 const Body = () =>{
     
@@ -37,7 +37,7 @@ const onlineStatus = useOnlineStatus();
    
    const {loggedInUser,setUserName } = useContext(UserContext);
    //conditional rendering: if the list of restaurants is empty, show the shimmer effect
-    if (listOfRestaurant.length === 0) {
+    if (!listOfRestaurant || listOfRestaurant.length === 0) {
        return <Shimmer/>;
     }
 
