@@ -1,6 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import Contact from "../Contact";
 import "@testing-library/jest-dom";
+
+
+
+describe("contact us testcases",() => {
+
+
+
+
 test ("Should load contact us component", () => {
 
 
@@ -34,9 +42,14 @@ test ("Should load input name inside contact us component", () => {
 
 test("should load 2 input boxes on the contact component", () =>{
     render(<Contact/>);
+
+    // querying
     const inputboxes = screen.getAllByRole("textbox");
-    console.log(inputboxes);
-
-    // expect(inputboxes).toBeInTheDocument();
-
-})
+    // console.log(inputboxes.length);
+    expect(inputboxes).toHaveLength(2);
+    inputboxes.forEach((input) => 
+        expect(input).toBeInTheDocument()
+    );
+    
+});
+});

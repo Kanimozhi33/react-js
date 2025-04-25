@@ -110,3 +110,15 @@ types:
  * then install @babel/preset-react to make JSX work in testcases...
  * include @babel/preset-react into bable config
  * install npm i -D @testing-library/jest-dom(expect(heading).toBeInTheDocument() - has to work)
+
+
+ * test cases: 
+   * render something
+   * querying
+   * assertion
+
+ * grouping the test cases:
+   * using describe
+   * can use nested describe
+   * test === it
+  
