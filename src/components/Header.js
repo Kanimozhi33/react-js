@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 const Header = () =>{
 
     const [btnName,setbtnName] = useState("Log in");
-    console.log("header is rendered");
+    // console.log("header is rendered");
 // if no dependancy array , useeffect ia been called every componenet render
 // if the depency array is empty = [] , useeffect is called only once
 // if dependancy is not empty = [btnName], useeffect is called every time the value of btnName changes(updated)
@@ -18,7 +18,7 @@ const Header = () =>{
     const {loggedInUser} = useContext(UserContext);
 // subcribing to the store
     const cartItems = useSelector((store) => store.cart.item);
-console.log(cartItems);
+
 
 
 
