@@ -4,14 +4,15 @@ import User from "./User";
 import UserContext from "../utils/UserContext";
 const RestaurantCard = (props) =>{
     const {resData} = props;
-    console.log("resData",resData);
+    console.log(resData);
     const {loggedInUser} = useContext(UserContext);
     
     const {name,avgRating,cloudinaryImageId,costForTwo} = resData?.info;
     const {deliveryTime} = resData?.info?.sla;
     const {cuisines} = resData?.info;
     return(
-        <div className="res-card bg-gray-200  m-4 p-4 w-[250px] rounded-lg hover:bg-green-400">
+        <div data-testid = "rescard" 
+        className="res-card bg-gray-200  m-4 p-4 w-[250px] rounded-lg hover:bg-green-400">
             <img className="res-image rounded-lg font-bold py-2 text-2xl"
                 alt="res-logo"
                 src={CDN_URL+cloudinaryImageId}></img>

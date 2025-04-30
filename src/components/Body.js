@@ -5,7 +5,7 @@ import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus"; 
 import UserContext from "../utils/UserContext";
 import { withDiscount } from "./RestaurantCard";
-import UserContext from "../utils/UserContext";
+
 
 const Body = () =>{
     
@@ -21,13 +21,22 @@ const RestaurantCardwithDiscount = withDiscount(RestaurantCard);
         fetchData();
     },[]);
     const fetchData = async () =>{
+        try{
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.4470564&lng=77.6839768&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
 
         
-        setListOfRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-   };
+        setListOfRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants) ;
+        setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants) ;
+   }
+   catch (error) {
+    console.error("Failed to fetch data:", error);
+    setListOfRestaurant([]); // Fallback to empty array in case of error
+    setFilteredRestaurant([]);
+}
+    }
+   ;
+
 
 const onlineStatus = useOnlineStatus();
    if (onlineStatus === false) 
@@ -45,7 +54,10 @@ const onlineStatus = useOnlineStatus();
         <div className="bg-yellow-300">
             <div className="pl-8">
                 <div className= " flex p-4 ">
-                    <input type = "text" className="bg-gray-200 rounded-lg" value={searchtext} 
+                    <input 
+                    type = "text"
+                    data-testid="searchInput"
+                    className="bg-gray-200 rounded-lg" value={searchtext} 
                     onChange={(e) => setsearchtext(e.target.value)
                         
                     }/>
@@ -62,9 +74,7 @@ const onlineStatus = useOnlineStatus();
                          const filteredRestaurant = listOfRestaurant.filter((res)=>res.info.name.toLowerCase().includes(searchtext.toLowerCase()) );
                          setFilteredRestaurant(filteredRestaurant);
                      }}
-                     >search</button> {
-                         
-                     }
+                     >Search</button> 
                  </div>
                  
                  <button className="filter-btn p-2 m-0.5 bg-green-400 border-black rounded-lg" onClick={()=>

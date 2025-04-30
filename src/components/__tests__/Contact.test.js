@@ -7,7 +7,13 @@ import "@testing-library/jest-dom";
 describe("contact us testcases",() => {
 
 
+beforeAll (() => {
+    console.log("before all");
+})
 
+beforeEach (() => {
+    console.log("before each testcase")
+}) 
 
 test ("Should load contact us component", () => {
 
