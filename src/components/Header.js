@@ -4,6 +4,9 @@ import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import { RiHome2Fill } from "react-icons/ri";
+import final_logo from "../utils/final_logo.png";   
+
 
 
 const Header = () =>{
@@ -23,35 +26,48 @@ const Header = () =>{
 
 
     return (
-        <div className="flex justify-between bg-yellow-300 shadow-lg m-2.5">
-            <div className="logo-container">
-                <img className="w-60" src= {LOGO_URL} ></img>
+        <div className="flex justify-between bg-orange-400 shadow-lg h-30">
+            <div className="logo-container flex">
+                <img className="max-w-30 p-3 absolute rounded-b-full " src= {final_logo} ></img>
+                
             </div>
-            <div className="flex items-center bg-gray-200">
-                <ul className="flex p-4 m-4 ">
-                    <li className="px-4">
+            <div className=" flex items-center font-mono m-10 text-black text-4xl font-bold absolute pl-20">
+                    <h1>MealMinit</h1>
+                </div>
+            <div className=" flex items-center space-x-5 bg-orange-400  ">
+                <ul className="flex p-4 m-4  ">
+                    {/* <li className="px-4">
                         online status: {onlineStatus ? "✅" : "❌"};
-                    </li>
+                    </li> */}
+                    <div className="p-5  flex-wrap font-mono bg-orange-100 font-bold flex rounded-4xl space-x-2">
+                    <li className="flex justify-center items-center ">
+                    <RiHome2Fill /></li> 
+                        <li className=" items-center justify-center font-bold">
+                        <Link to="/"> Home</Link></li></div>
                     
-                    <li className="px-4">
-                        <Link to="/">Home</Link></li>
-                    <li className="px-4">
+                    {/* <li className="px-4">
                         <Link to= "/grocery">Groceries</Link>
-                    </li>
-                    <li className="px-4">
-                        <Link to= "/about">About</Link></li>
-                    <li className="px-4">
-                        <Link to="/contact">Contact Us</Link></li>
-                    <li className="px-4">
-                        <Link to= "/feedback">Feedbacks</Link></li>
-                    <li className="px-4 font-bold">
-                        <Link to="/cart"> Cart - ({cartItems.length} items)</Link></li>
-                    <button className="login-btn" onClick={()=>{
+                    </li> */}
+                    <div className="p-5  flex-wrap font-mono bg-orange-100 font-bold flex rounded-4xl space-x-2"><li className="px-4">
+                        <Link to= "/about">About</Link></li></div>
+                    
+                    {/* <li className="px-4">
+                        <Link to="/contact">Contact Us</Link></li> */}
+                    {/* <li className="px-4">
+                        <Link to= "/feedback">Feedbacks</Link></li> */}
+
+                    <div className=" flex m-2.5 font-mono bg-orange-100 rounded-full"><li className="px-4 font-bold">
+                    <div className="w-10 flex bg-orange-950 text-orange-200 rounded-b-full rounded-t-full items-center justify-center "><h3> {cartItems.length}</h3></div>
+                        <Link to="/cart"> Cart
+                        
+                        </Link></li></div>
+                    
+                    {/* <button className="login-btn" onClick={()=>{
                         btnName === "Log in"
                         ? setbtnName("Log out")
                         : setbtnName("Log in");
                         }}>{btnName}</button>
-                        <li className="px-4 font-bold">{loggedInUser}</li>
+                        <li className="px-4 font-bold">{loggedInUser}</li> */}
                 </ul>
             </div>
         </div>
