@@ -1,11 +1,13 @@
 import { useState, useContext } from "react";
-import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 import { RiHome2Fill } from "react-icons/ri";
 import final_logo from "../utils/final_logo.png";   
+import { RiInformationFill } from "react-icons/ri";
+import { BsCartCheckFill } from "react-icons/bs";
+
 
 
 
@@ -26,7 +28,7 @@ const Header = () =>{
 
 
     return (
-        <div className="flex justify-between bg-orange-400 shadow-lg h-30">
+        <div className=" navbar  flex justify-between bg-orange-400 shadow-lg h-30">
             <div className="logo-container flex">
                 <img className="max-w-30 p-3 absolute rounded-b-full " src= {final_logo} ></img>
                 
@@ -35,20 +37,23 @@ const Header = () =>{
                     <h1>MealMinit</h1>
                 </div>
             <div className=" flex items-center space-x-5 bg-orange-400  ">
-                <ul className="flex p-4 m-4  ">
+                <ul className="flex space-x-5 pointer-events-auto ">
                     {/* <li className="px-4">
                         online status: {onlineStatus ? "✅" : "❌"};
                     </li> */}
-                    <div className="p-5  flex-wrap font-mono bg-orange-100 font-bold flex rounded-4xl space-x-2">
+                    <div className=" w-20 items-center justify-center font-mono bg-orange-100 font-bold flex rounded-2xl space-x-2">
                     <li className="flex justify-center items-center ">
                     <RiHome2Fill /></li> 
-                        <li className=" items-center justify-center font-bold">
+                        <li className=" flex items-center justify-center font-bold">
                         <Link to="/"> Home</Link></li></div>
                     
                     {/* <li className="px-4">
                         <Link to= "/grocery">Groceries</Link>
                     </li> */}
-                    <div className="p-5  flex-wrap font-mono bg-orange-100 font-bold flex rounded-4xl space-x-2"><li className="px-4">
+                    <div className=" w-20 items-center justify-center font-mono bg-orange-100 font-bold flex rounded-2xl space-x-2">
+                    <li className="flex justify-center items-center ">
+                    <RiInformationFill/></li> 
+                        <li className=" flex items-center justify-center font-bold" >
                         <Link to= "/about">About</Link></li></div>
                     
                     {/* <li className="px-4">
@@ -56,15 +61,20 @@ const Header = () =>{
                     {/* <li className="px-4">
                         <Link to= "/feedback">Feedbacks</Link></li> */}
 
-                    <div className=" flex m-2.5 font-mono bg-orange-100 rounded-full"><li className="px-4 font-bold">
-                    <div className="w-10 flex bg-orange-950 text-orange-200 rounded-b-full rounded-t-full items-center justify-center "><h3> {cartItems.length}</h3></div>
-                        <Link to="/cart"> Cart
-                        
+                    <div className=" h-10 w-15 items-center justify-center font-mono bg-orange-100 font-bold flex rounded-2xl space-x-2">
+                    <li className="flex justify-center items-center ">
+                    <BsCartCheckFill/></li> 
+                        <li className=" items-center justify-center font-bold">
+                    <div className="font-snas  bg-orange-950 text-orange-200 rounded-b-full rounded-t-full items-center justify-center ">
+                       </div>
+                        <Link to="/cart" className="hover:bg-orange-0">cart
+                         <label className=" badge w-5 bg-orange-950 rounded-2xl text-orange-200 "> {cartItems.length}</label>
                         </Link></li></div>
                     
                     {/* <button className="login-btn" onClick={()=>{
                         btnName === "Log in"
                         ? setbtnName("Log out")
+                        
                         : setbtnName("Log in");
                         }}>{btnName}</button>
                         <li className="px-4 font-bold">{loggedInUser}</li> */}

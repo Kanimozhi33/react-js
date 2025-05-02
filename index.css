@@ -1,6 +1,9 @@
-@import "tailwindcss";
-
-
+/* @import "tailwind/preflight"; */
+/* Import Tailwind's base styles (preflight) to reset and normalize CSS */
+/* Import Tailwind's component styles */
+/* Import Tailwind's utility classes */
+@tailwind utilities;
+@tailwind utilities;
 
 
 
