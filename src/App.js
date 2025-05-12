@@ -9,7 +9,7 @@ import Feedback from "./components/Feedback";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import UserContext from "./utils/UserContext";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 import { Provider } from "react-redux"; 
