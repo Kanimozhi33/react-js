@@ -4,7 +4,7 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 import { RiHome2Fill } from "react-icons/ri";
-import final_logo from "../utils/final_logo.png";   
+import final_logo from "../utils/final_logo.png"  
 import { RiInformationFill } from "react-icons/ri";
 import { BsCartCheckFill } from "react-icons/bs";
 
@@ -13,7 +13,7 @@ import { BsCartCheckFill } from "react-icons/bs";
 
 const Header = () =>{
 
-    const [btnName,setbtnName] = useState("Log in");
+    // const [btnName,setbtnName] = useState("Log in");
     // console.log("header is rendered");
 // if no dependancy array , useeffect ia been called every componenet render
 // if the depency array is empty = [] , useeffect is called only once
@@ -28,9 +28,9 @@ const Header = () =>{
 
 
     return (
-        <div className=" navbar  flex justify-between bg-orange-400 shadow-lg h-30">
+        <div className="  flex justify-between h-6/12 bg-orange-400 shadow-lg">
             <div className="logo-container flex">
-                <img className="max-w-30 p-3 absolute rounded-b-full " src= {final_logo} ></img>
+                <img className="max-w-30 p-3 absolute rounded-b-full " src={final_logo} ></img>
                 
             </div>
             <div className=" flex items-center font-mono m-10 text-black text-4xl font-bold absolute pl-20">
