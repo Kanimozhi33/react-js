@@ -4,8 +4,8 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import About from "./components/About";
 import Cart from "./components/Cart"
-import Contact from "./components/Contact";
-import Feedback from "./components/Feedback";
+// import Contact from "./components/Contact";
+// import Feedback from "./components/Feedback";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
@@ -16,7 +16,7 @@ import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 
 
-const Grocery = lazy(() => import("./components/Grocery"));
+// const Grocery = lazy(() => import("./components/Grocery"));
 
 
 const AppLayout = () =>{
@@ -56,23 +56,23 @@ const appRouter = createBrowserRouter([
                 path: "/",
                 element: <Body/>
             },
-            {
-                path: "/grocery",
-                element: <Suspense fallback={<Shimmer/>}><Grocery/></Suspense>
-            },  
+            // {
+            //     path: "/grocery",
+            //     element: <Suspense fallback={<Shimmer/>}><Grocery/></Suspense>
+            // },  
             {
                 path: "/about",
                 element: <About/>
             },
-            {
-                path: "/contact",
-                element: <Contact/>
-            },
+            // {
+            //     path: "/contact",
+            //     element: <Contact/>
+            // },
             
-            {
-                path:"/feedback",
-                element: <Feedback/>
-            }, 
+            // {
+            //     path:"/feedback",
+            //     element: <Feedback/>
+            // }, 
 
             {
                 path: "/restaurants/:resId",
