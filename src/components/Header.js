@@ -27,8 +27,8 @@ const Header = () =>{
 
 
     return (
-        <div className="  flex justify-between bg-orange-500 shadow-lg py-4">
-            <div className="h-20 w-20 flex m-5 items-center  ">
+        <div className="  flex justify-between bg-orange-500 shadow-lg max-h-[90px]">
+            <div className="h-15 w-20 flex m-5 items-center  ">
                 
                 <label className="p-5 font-bold text-4xl"><Link to="/"><GiNoodles /></Link></label>
                 <h1 className=" font-sans items-center justify-center font-bold flex-wrap text-3xl"> MEAL MINIT</h1>
