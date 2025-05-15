@@ -14,7 +14,7 @@ import UserContext from "./utils/UserContext";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 import { Provider } from "react-redux"; 
 import appStore from "./utils/appStore";
-
+import Footer from "./components/Footer";
 
 // const Grocery = lazy(() => import("./components/Grocery"));
 
@@ -35,9 +35,10 @@ useEffect(() => {
         <Provider store ={appStore}>
 
         <UserContext.Provider value={{loggedInUser: userName, setUserName} }>
-            <div className="app">
+            <div className="app flex-col">
             <Header/>
             <Outlet/>
+            <Footer/>
         </div>
     
             </UserContext.Provider>

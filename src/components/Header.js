@@ -17,9 +17,9 @@ const Header = () =>{
 // if no dependancy array , useeffect ia been called every componenet render
 // if the depency array is empty = [] , useeffect is called only once
 // if dependancy is not empty = [btnName], useeffect is called every time the value of btnName changes(updated)
-    const onlineStatus = useOnlineStatus();
+    // const onlineStatus = useOnlineStatus();
 
-    const {loggedInUser} = useContext(UserContext);
+    // const {loggedInUser} = useContext(UserContext);
 // subcribing to the store
     const cartItems = useSelector((store) => store.cart.item);
 
@@ -27,7 +27,7 @@ const Header = () =>{
 
 
     return (
-        <div className="  flex justify-between bg-orange-500 shadow-lg">
+        <div className="  flex justify-between bg-orange-500 shadow-lg py-4">
             <div className="h-20 w-20 flex m-5 items-center  ">
                 
                 <label className="p-5 font-bold text-4xl"><Link to="/"><GiNoodles /></Link></label>

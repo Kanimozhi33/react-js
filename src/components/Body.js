@@ -51,7 +51,7 @@ const onlineStatus = useOnlineStatus();
     }
 
     return (
-        <div className="bg-gray-100">
+        <div className="bg-gray-100 py-8">
             <div className="pl-8">
                 <div className= " flex p-4 ">
                     <input 

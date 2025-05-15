@@ -8,24 +8,33 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 const About = () => {
     return (
-        <div>
+        <div className="py-8">
             <div className="p-10 text-orange-500 text-4xl">
-                <h1 className="items-center text-balance font-bold ">ABOUT</h1>
+                <h1 className="items-center text-balance font-bold font-sans ml-4 mt-4">ABOUT</h1>
                 
             </div>
            <div className="p-10 justify-center items-center font-sans font-semibold text-balance ">
-           <p className=" max-w-2xl mx-auto text-lg leading-relaxed text-gray-700 text-justify">Get ready for Meal Minit - your quick and easy food delivery app! 
-            We're passionate about connecting you with the best local restaurants and bringing their
-             amazing food directly to your door. Whether it's a solo snack or a group gathering,
-              discover diverse menus and order in seconds. Behind the scenes, Parcel bundles the 
-              power of React, Redux, while Tailwind CSS ensures a smooth, visually appealing
-               and lightning-fast experience. Your food adventure starts now with Meal Minit!</p>
+           <p className=" max-w-screen-2xl mx-20 text-lg leading-relaxed text-gray-700 text-justify">
+            Craving your favorite local eats delivered swiftly? Meal Minit is your answer, passionately 
+            connecting you with the best restaurants right to your doorstep. Whether it's a solo snack or
+             a group gathering, effortlessly explore diverse menus and order in seconds. Powering this seamless
+            experience is a modern frontend built with React for a dynamic and responsive interface, expertly
+            managing data flow with Redux.<br></br>
+            <br></br>
+            Behind the scenes, Parcel ensures lightning-fast loading, while the sleek and visually appealing
+             design is crafted with Tailwind CSS. This powerful combination of frontend technologies delivers a 
+             smooth, intuitive, and rapid food ordering journey, making your next delicious meal just a few taps away.
+              Start your culinary adventure with Meal Minit today!</p>
 </div> 
-<div className="max-w-2xl mx-auto text-lg leading-relaxed text-gray-700 text-justify">
-    <div className="justify flex-wrap">feel free to visit my<h2> PORTFOLIO<FaExternalLinkAlt /></h2> </div>
+<div className="max-w-2xl   mx-auto text-lg leading-relaxed text-gray-700 justify-left">
+    <div className="flex items-center">
+        <span className="font-bold">feel free to visit my</span>
+        <div className="flex items-center ml-2 bg-orange-500 rounded-2xl p-2 hover:text-white hover:border-white hover:shadow-xl font-sans font-bold
+        focus:outline-none focus:ring-2 focus:ring-gray-400 active:bg-gray-100 active:text-gray-900 active:scale-95 transition duration-75 ease-in-out ">
+             PORTFOLIO<FaExternalLinkAlt className="ml-4" /></div> </div>
     
 </div>
-        </div>
+        </div> 
     )
 };
 
