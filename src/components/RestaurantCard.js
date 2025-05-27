@@ -12,7 +12,7 @@ const RestaurantCard = (props) =>{
     const {cuisines} = resData?.info;
     return(
         <div data-testid = "rescard" 
-        className="res-card bg-gray-200  m-4 p-4 w-[250px] rounded-lg hover:bg-green-400">
+        className="res-card bg-gray-200  m-4 p-4 w-[250px] rounded-lg hover:bg-green-400 transform duration-300 transition-all opacity-0 animate-in-1">
             <img className="res-image rounded-lg font-bold py-2 text-2xl"
                 alt="res-logo"
                 src={CDN_URL+cloudinaryImageId}></img>
@@ -35,7 +35,7 @@ export const withDiscount = (RestaurantCard)=>{
 
             return (
                 <div>
-                    <label className="absolute bg-green-600 rounded-lg p-2 m-2 text-center font-bold text-white">
+                    <label className="absolute bg-green-600 rounded-lg p-2 m-2 text-center font-bold text-white opacity-0 animate-in-3">
                          offers available
                     </label>
                     <RestaurantCard {...props}/>

@@ -6,6 +6,15 @@
 
 
 
+@keyframes fadeInSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+ }
+.animate-in-1 { animation: fadeInSlideUp 0.8s ease-out forwards; }
+.animate-in-2 { animation: fadeInSlideUp 0.8s ease-out 0.2s forwards; } /* 0.2s delay */
+.animate-in-3 { animation: fadeInSlideUp 0.8s ease-out 0.4s forwards; } 
+.animate-in-4 { animation: fadeInslideUp 0.8s ease-in-out 0.2s forwards;}
+
 
 
 

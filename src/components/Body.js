@@ -57,14 +57,15 @@ const onlineStatus = useOnlineStatus();
                     <input 
                     type = "text"
                     data-testid="searchInput"
-                    className="bg-gray-200 rounded-lg" value={searchtext} 
+                    className="bg-gray-200 rounded-lg transform duration-300 transition-all opacity-0 animate-in-1" value={searchtext} 
                     onChange={(e) => setsearchtext(e.target.value)
                         
                     }/>
 
 
                     <div className="flex items-center justify-center">
-                    <button className="search-btn p-2  bg-green-400 border-b-neutral-950 rounded-lg"
+                    <button className="search-btn p-2  bg-green-400 border-b-neutral-950 rounded-lg
+                    transform duration-300 transition-all opacity-0 animate-in-1"
                      
                      
                     
@@ -77,14 +78,14 @@ const onlineStatus = useOnlineStatus();
                      >Search</button> 
                  </div>
                  
-                 <button className="filter-btn p-2 m-0.5 bg-green-400 border-black rounded-lg" onClick={()=>
+                 <button className="filter-btn p-2 m-0.5 bg-green-400 border-black rounded-lg transform duration-300 transition-all opacity-0 animate-in-1" onClick={()=>
                  {
                      const filteredList = listOfRestaurant.filter(
                      (res)=> res.info.avgRating > 4.3) ;
                      setFilteredRestaurant(filteredList);
                      
                      }}>Top Rated Restaurant "(more than 4.3)"</button>
-                     <div>
+                     {/* <div>
                         <label>username:
 
                         </label>
@@ -94,7 +95,7 @@ const onlineStatus = useOnlineStatus();
 
                         }>
                         </input>
-                     </div>
+                     </div> */}
                     </div>
                     </div>
                     
