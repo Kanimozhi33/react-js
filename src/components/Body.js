@@ -3,19 +3,28 @@ import { useState , useEffect , useContext} from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus"; 
-
+import Top_Rated from "./Top_rated";
 import { withDiscount } from "./RestaurantCard";
 import { FaRegDotCircle } from "react-icons/fa";
+import { IoStar } from "react-icons/io5";
+
+
+
+
+
 
 const Body = () =>{
     
 const [listOfRestaurant,setListOfRestaurant] = useState([]);
- const [filteredRestaurant,setFilteredRestaurant] = useState([]);
+const [filteredRestaurant,setFilteredRestaurant] = useState([]);
 
-const [searchtext, setsearchtext] = useState("");
+const [topRatedRestaurant, setTopRatedRestaurant] = useState(false);
+
+const [searchtext, setsearchtext] = useState(false);
 
 const RestaurantCardwithDiscount = withDiscount(RestaurantCard);
 
+const Top_Rate = 4.4;
 
     useEffect(() => {
         fetchData();
@@ -37,6 +46,19 @@ const RestaurantCardwithDiscount = withDiscount(RestaurantCard);
     }
    ;
 
+useEffect(() => {
+    let currentList = [...listOfRestaurant];
+
+    if (searchtext){
+        currentList = currentList.filter((res)=> res.info.name.toLowerCase().includes(searchtext.toLowerCase()));
+    }
+
+    if (topRatedRestaurant) {
+        currentList = currentList.filter((res)=> res.info.avgRating && res.info.avgRating >= Top_Rate);
+    }
+
+    setFilteredRestaurant(currentList);
+}, [searchtext, topRatedRestaurant, listOfRestaurant])
 
 const onlineStatus = useOnlineStatus();
    if (onlineStatus === false) 
@@ -57,17 +79,17 @@ const onlineStatus = useOnlineStatus();
                    <div> <input 
                     type = "text"
                     data-testid="searchInput"
-                    className=" rounded-lg transform border-orange-600 text-blue-950  font-libre
-                    duration-300 transition-all opacity-0 animate-in-1 text-bold focus:outline-none focus:ring-4 focus:ring-orange-600" value={searchtext} 
+                    className=" rounded-lg transform border-orange-600 flex-grow text-blue-950  font-libre ease-in-out placeholder-gray-400:
+                    duration-300 transition-all opacity-0 animate-in-1 text-bold focus:outline-none focus:ring-4 focus:ring-orange-600 focus:ring-opacity-75 focus:border-orange-500" value={searchtext} 
                     onChange={(e) => setsearchtext(e.target.value)
                         
                     }/></div>
 
 
-                    <div className="flex items-center  justify-center ml-10">
+                    <div className="flex items-center hover:scale-105 justify-center ml-10">
                     <button className="search-btn py-3 px-6 font-semibold font-oswald bg-orange-600 border-b-neutral-950 rounded-lg
-                    transform duration-250 transition-all ease-in-out opacity-0 animate-in-1 hover:shadow-xl 
-                     hover:text-white focus:outline-none focus:ring-4  focus:ring-black"
+                    transform duration-200 transition-all ease-in-out opacity-0 animate-in-1 hover:shadow-xl 
+                     hover:text-white  focus:outline-none focus:ring-2 focus:ring-black"
                      
                      
                     
@@ -79,15 +101,28 @@ const onlineStatus = useOnlineStatus();
                      }}
                      >Search</button> 
                  </div>
-                 <div className="justify-center items-center ml-10 ">
-                 <button className="filter-btn p-2 m-0.5 font-oswald border-black bg-orange-600 active:text-white rounded-lg transform duration-300 
-                 transition-all opacity-0 animate-in-1" onClick={()=>
+                 <div className="flex checkbox items-center text-black justify-center ml-10 
+                 p-2 m-0.5 font-oswald border-black bg-orange-600 active:text-white rounded-lg transform duration-300 
+                 transition-all opacity-0 animate-in-1 focus:bg-orange-700">
+                    
+                    <Top_Rated
+                    label= "Top Rated "
+                    checked={topRatedRestaurant}
+                    onChange={() =>
+                        setTopRatedRestaurant(!topRatedRestaurant)
+                    }/>
+                    <IoStar />
+                 </div>
+                 {/* <div className="justify-center items-center ml-10 "> */}
+                 {/* <button className="filter-btn p-2 m-0.5 font-oswald border-black bg-orange-600 active:text-white rounded-lg transform duration-300 
+                 transition-all opacity-0 animate-in-1 focus:bg-orange-700" onClick={()=>
                  {
                      const filteredList = listOfRestaurant.filter(
                      (res)=> res.info.avgRating > 4.3) ;
                      setFilteredRestaurant(filteredList);
                      
-                     }}> <FaRegDotCircle className="text-orange-600 focus:text-black"/> Top Rated </button></div>
+                     }}> <FaRegDotCircle className="text-green-800 focus:text-black"/> {Top_Rated}
+                     Top Rated </button></div> */}
                      {/* <div>
                         <label>username:
 
@@ -110,7 +145,7 @@ const onlineStatus = useOnlineStatus();
             {filteredRestaurant.map((restaurant) => (
                 <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
                 {   
-                  ((restaurant.info.aggregatedDiscountInfoV3) != null) ? (<RestaurantCardwithDiscount  resData={restaurant} /> ):
+                //   ((restaurant.info.aggregatedDiscountInfoV3) != null) ? (<RestaurantCardwithDiscount  resData={restaurant} /> ):
                    (<RestaurantCard resData={restaurant} />)
                 }
 
