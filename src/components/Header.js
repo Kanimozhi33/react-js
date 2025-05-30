@@ -27,14 +27,14 @@ const Header = () =>{
 
 
     return (
-        <div className="  flex justify-between bg-orange-500 shadow-lg max-h-[90px]  transform transition-all duration-150 ">
+        <div className="  flex justify-between bg-orange-600 shadow-lg max-h-[90px]  transform transition-all duration-150 ">
             <div className="h-15 w-20 flex m-5 items-center  ">
                 
                 <label className="p-5 font-bold text-4xl opacity-0 animate-in-1"><Link to="/"><GiNoodles /></Link></label>
                 <h1 className=" items-center justify-center font-caveat flex-wrap font-semibold text-3xl opacity-0 animate-in-1"> MEAL MINIT</h1>
                 </div>
             
-            <div className="p-10 flex items-center space-x-5 bg-orange-500  ">
+            <div className="p-10 flex items-center space-x-5 bg-orange-600  ">
                 <ul className="flex space-x-5 pointer-events-auto ">
                     {/* <li className="px-4">
                         online status: {onlineStatus ? "✅" : "❌"};
@@ -61,9 +61,9 @@ const Header = () =>{
 
                     <div className="h-10 w-10 items-center justify-center opacity-0 animate-in-1 font-mono hover:bg-stone-100 font-bold
                      flex rounded-2xl transform transition-all duration-300 space-x-2">
-                    <li className="relative flex items-center justify-center font-bold"> {/* Added relative here */}
-                        <Link to="/cart" title="view cart" className="hover:bg-orange-0 flex items-center"> {/* Added flex items-center here */}
-                        <BsCartCheckFill className="h-6 w-6" /> {/* Adjust icon size if needed */}
+                    <li className="relative flex items-center justify-center font-bold"> 
+                        <Link to="/cart" title="view cart" className="hover:bg-orange-0 flex items-center"> 
+                        <BsCartCheckFill className="h-6 w-6" /> 
                         <label className="absolute top-[-0.5rem] right-[-0.5rem] badge w-5 h-5 bg-stone-300 rounded-full text-black text-xs font-semibold flex items-center justify-center">
                             {cartItems.length}
                         </label>

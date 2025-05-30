@@ -10,7 +10,7 @@ import { GrMail } from "react-icons/gr";
 const Footer = () =>{
 
     return (
-        <div className="flex bg-orange-500 h-[150px] justify-between py-4
+        <div className="flex bg-orange-600 h-[150px] justify-between py-4
         position:absolute bottom-0 w-full">
             <div className="flex items-center justify-center">
                 <GiNoodles className="p-3 flex ml-4 items-center justify-center h-16 w-16 opacity-0 animate-in-1 "/>
