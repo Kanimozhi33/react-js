@@ -8,13 +8,13 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 const About = () => {
     return (
-        <div className="py-8">
+        <div className="py-8 ">
             <div className="p-10 text-orange-500 text-4xl">
-                <h1 className="items-center text-balance font-bold font-sans ml-4 mt-4">ABOUT</h1>
+                <h1 className="items-center text-balance font-bold font-sans ml-4 mt-4 transform opacity-0 animate-in-1 ">ABOUT</h1>
                 
             </div>
            <div className="p-10 justify-center items-center font-sans font-semibold text-balance ">
-           <p className=" max-w-screen-2xl mx-20 text-lg leading-relaxed text-gray-700 text-justify">
+           <p className=" max-w-screen-2xl mx-20 text-lg leading-relaxed text-gray-700 text-justify transform opacity-0 animate-in-2">
             Craving your favorite local eats delivered swiftly? Meal Minit is your answer, passionately 
             connecting you with the best restaurants right to your doorstep. Whether it's a solo snack or
              a group gathering, effortlessly explore diverse menus and order in seconds. Powering this seamless
@@ -28,9 +28,9 @@ const About = () => {
 </div> 
 <div className="max-w-2xl   mx-auto text-lg leading-relaxed text-gray-700 justify-left">
     <div className="flex items-center">
-        <span className="font-bold">feel free to visit my</span>
+        <span className="font-bold transform opacity-0 animate-in-1">feel free to visit my</span>
         <div className="flex items-center ml-2 bg-orange-500 rounded-2xl p-2 hover:text-white hover:border-white hover:shadow-xl font-sans font-bold
-        focus:outline-none focus:ring-2 focus:ring-gray-400 active:bg-gray-100 active:text-gray-900 active:scale-95 transition duration-75 ease-in-out ">
+        focus:outline-none focus:ring-2 focus:ring-gray-400 active:bg-gray-100 active:text-gray-900 active:scale-95 transition duration-75 ease-in-out transform opacity-0 animate-in-1">
              PORTFOLIO<FaExternalLinkAlt className="ml-4" /></div> </div>
     
 </div>

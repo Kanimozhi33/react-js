@@ -7,7 +7,7 @@ import Top_Rated from "./Top_rated";
 import { withDiscount } from "./RestaurantCard";
 import { FaRegDotCircle } from "react-icons/fa";
 import { IoStar } from "react-icons/io5";
-
+import { FaSearch } from "react-icons/fa";
 
 
 
@@ -20,7 +20,7 @@ const [filteredRestaurant,setFilteredRestaurant] = useState([]);
 
 const [topRatedRestaurant, setTopRatedRestaurant] = useState(false);
 
-const [searchtext, setsearchtext] = useState(false);
+const [searchtext, setsearchtext] = useState();
 
 const RestaurantCardwithDiscount = withDiscount(RestaurantCard);
 
@@ -73,8 +73,8 @@ const onlineStatus = useOnlineStatus();
     }
 
     return (
-        <div className="bg-white py-8">
-            <div className="items-center justify-center flex-auto mx-auto max-w-[200px]">
+        <div className="bg-white py-8 mx-auto justify-center items-center ">
+            <div className="items-center justify-center flex-auto max-w-[200px]">
                 <div className= " flex p-4  ">
                    <div> <input 
                     type = "text"
@@ -86,10 +86,10 @@ const onlineStatus = useOnlineStatus();
                     }/></div>
 
 
-                    <div className="flex items-center hover:scale-105 justify-center ml-10">
-                    <button className="search-btn py-3 px-6 font-semibold font-oswald bg-orange-600 border-b-neutral-950 rounded-lg
+                    <div className="flex items-center hover:scale-105 justify-center ml-2">
+                    <button className="search-btn py-3 flex px-6 font-semibold font-oswald bg-orange-600 border-b-neutral-950 rounded-lg
                     transform duration-200 transition-all ease-in-out opacity-0 animate-in-1 hover:shadow-xl 
-                     hover:text-white  focus:outline-none focus:ring-2 focus:ring-black"
+                     hover:text-white scale-105 focus:outline-none focus:ring-2 focus:ring-black"
                      
                      
                     
@@ -99,19 +99,19 @@ const onlineStatus = useOnlineStatus();
                          const filteredRestaurant = listOfRestaurant.filter((res)=>res.info.name.toLowerCase().includes(searchtext.toLowerCase()) );
                          setFilteredRestaurant(filteredRestaurant);
                      }}
-                     >Search</button> 
+                     > <FaSearch className="items-center justify-center mr-2" /> Search</button> 
                  </div>
-                 <div className="flex checkbox items-center text-black justify-center ml-10 
-                 p-2 m-0.5 font-oswald border-black bg-orange-600 active:text-white rounded-lg transform duration-300 
+                 <div className="flex checkbox items-center text-black justify-center ml-10 focus:outline-none
+                 px-6 py-3 font-oswald border-black bg-orange-600 active:text-white rounded-lg transform duration-300 
                  transition-all opacity-0 animate-in-1 focus:bg-orange-700">
                     
                     <Top_Rated
-                    label= "Top Rated "
+                    label= {"Top" + "Rated"} 
                     checked={topRatedRestaurant}
                     onChange={() =>
                         setTopRatedRestaurant(!topRatedRestaurant)
                     }/>
-                    <IoStar />
+                    <IoStar className="ml-4"/>
                  </div>
                  {/* <div className="justify-center items-center ml-10 "> */}
                  {/* <button className="filter-btn p-2 m-0.5 font-oswald border-black bg-orange-600 active:text-white rounded-lg transform duration-300 
