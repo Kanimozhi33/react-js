@@ -73,7 +73,7 @@ const onlineStatus = useOnlineStatus();
     }
 
     return (
-        <div className="bg-white py-8 mx-auto justify-center items-center ">
+        <div className="bg-black py-8 mx-auto justify-center items-center ">
             <div className="items-center justify-center flex-auto max-w-[200px]">
                 <div className= " flex p-4  ">
                    <div> <input 
@@ -141,7 +141,7 @@ const onlineStatus = useOnlineStatus();
                
 
 
-            <div className="res-container flex flex-wrap">
+            <div className="res-container flex flex-wrap justify-center items-center">
             {filteredRestaurant.map((restaurant) => (
                 <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
                 {   

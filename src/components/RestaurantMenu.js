@@ -32,16 +32,15 @@ const RestaurantMenu = () =>{
 
     // console.log(categories);
     return (
-        <div className="text-center ">
-            <h1 className="font-bold text-4xl my-10">
-                hotel
-            </h1>
+        <div className="text-center bg-gray-200 font-oswald">
+            <div className="bg-black rounded-b-full text-orange-600 p-10 ">
+                
             <div>
-            <h2 className="font-extrabold my-10 text-2xl bg-yellow-300 p-3.5 m-5">{text}</h2>
+            <h2 className="font-extrabold  text-2xl ">{text}</h2>
             </div>
             
             <h3 className="font-bold text-lg">{cuisines.join(", ")}</h3>
-            
+            </div>
             {categories.map((category,index) => 
             (
                 <ResCategory key={category?.card?.card?.title} 

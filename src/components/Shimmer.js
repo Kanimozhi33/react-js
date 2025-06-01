@@ -4,9 +4,9 @@ const Shimmer = () => {
         <div className="whole-body pt-[50px] bg-white min-h-screen">
             
              <div className="flex justify-center items-center">
-                <div className="search-bar w-[400px] bg-gray-200 animate-pulse h-[50px] rounded-2xl m-5 "></div>
-                <div className="srch-btn w-[80px]  bg-gray-200 animate-pulse h-[50px] rounded-2xl m-5"></div>
-                <div className="filter w-[80px]  bg-gray-200 animate-pulse h-[50px] rounded-2xl m-5"></div>
+                <div className="search-bar w-[400px] bg-gray-400 animate-pulse h-[50px] rounded-2xl m-5 "></div>
+                <div className="srch-btn w-[80px]  bg-gray-400 animate-pulse h-[50px] rounded-2xl m-5"></div>
+                <div className="filter w-[80px]  bg-gray-400 animate-pulse h-[50px] rounded-2xl m-5"></div>
                 
              </div>
 

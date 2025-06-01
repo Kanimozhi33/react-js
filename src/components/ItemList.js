@@ -19,26 +19,26 @@ const handleAddItem = (item) => {
             
             <div className="">
                 {items.map((item) => (<div key={item.card.info.id}
-                 className="p-2 border-black border-t-1 text-left rounded-2xl ">
+                 className="p-2 border-orange-600 border-b-2 text-left rounded-2xl mx-auto ">
 
-                    <div data-testid = "fooditems"
-                    className="flex justify-between">
+                    <div data-testid = "fooditems "
+                    className="flex justify-between text-gray-200 mt-10">
                         <span 
-                        className="p-5 font-sans font-bold text-2xl">{item.card.info.name}</span>
+                        className="p-5 font-kanit font-bold text-2xl">{item.card.info.name}</span>
                     <div
                      className="flex justify-end">
                     <button onClick={() => handleAddItem(item)}
-                        className="p-2 bg-black shadow-2xl absolute text-amber-50 
-                     rounded-2xl cursor-pointer hover:bg-green-800">ADD +</button>
+                        className="px-4 py-2 hover:bg-black hover:text-orange-600  shadow-2xl absolute trasform transition duration-300 text-black font-bold 
+                     rounded-2xl cursor-pointer bg-orange-600">ADD +</button>
                     <img
                     alt="item-img" src={ITEMS_URL+item.card.info.imageId} 
-                    className="w-48 h-auto flex rounded-2xl"></img></div>
+                    className="w-60 h-50 flex bg-gray-200 rounded-2xl"></img></div>
                     
                 </div>
                 <span className="font-bold p-5">  
                     ₹ {item.card.info.price ? item.card.info.price/100 : item.card.info.defaultPrice /100}</span>
 
-                    <p className=" p-5 ">
+                    <p className=" p-5 text-gray-200 whitespace-normal text-sm font-light line-clamp-1 overflow-ellipsis ">
                         {item.card.info.description}
                     </p>
                 

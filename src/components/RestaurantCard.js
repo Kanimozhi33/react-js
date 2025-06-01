@@ -24,7 +24,7 @@ const RestaurantCard = (props) =>{
                     <h3 className="font-bold">{name}</h3>
                 <h3 className="cuisines text-sm font-semibold text-red-800">{cuisines.join(", ")}</h3>
                 {/* <h3 className="price font-sans text-lg flex text-center items-center "><FaIndianRupeeSign className="mr-2"/> {costForTwo}</h3> */}
-                <h3 className="font-oswald text-sm flex text-center items-center "><MdTimer className=" text-green-900 text-lg"/> {deliveryTime} mins  |<h2 className="font-oswald text-sm flex text-center items-center ml-2 "><RiStarSFill className=" text-amber-600 text-lg"/> {avgRating}</h2></h3>
+                <h3 className="font-oswald text-sm flex text-center items-center "><MdTimer className=" text-green-900 text-lg"/> {deliveryTime} mins  | <RiStarSFill className=" text-amber-600 text-lg"/> {avgRating}</h3>
                                 
                 {/* <h4>{loggedInUser}</h4> */}
                 </div>
