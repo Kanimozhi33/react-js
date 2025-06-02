@@ -73,14 +73,14 @@ const onlineStatus = useOnlineStatus();
     }
 
     return (
-        <div className="bg-black py-8 mx-auto justify-center items-center ">
-            <div className="items-center justify-center flex-auto max-w-[200px]">
-                <div className= " flex p-10  ">
-               <div className="flex  justify-between">
+        <div className="bg-black py-8 px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col sm:flex-row items-center justify-between max-w-6xl mx-auto space-y-4 sm:space-y-0 sm:space-x-8 mb-10">
+                <div className= "flex flex-col sm:flex-row items-center w-full sm:w-auto space-y-3 sm:space-y-0 sm:space-x-3">
+               <div className="flex text-center items-center mx-auto justify-center">
                    <div className="w-full sm:w-auto flex-grow"> <input 
                     type = "text"
                     data-testid="searchInput"
-                    className=" rounded-lg transform border-orange-600 flex-grow text-blue-950  font-libre ease-in-out placeholder-gray-400:
+                    className="h-12 rounded-lg transform border-orange-600 flex-grow text-blue-950  font-libre ease-in-out placeholder-gray-400:
                     duration-300 transition-all opacity-0 animate-in-1 text-bold focus:outline-none focus:ring-4 focus:ring-orange-600 
                     focus:ring-opacity-75 focus:border-orange-500" value={searchtext} 
                     onChange={(e) => setsearchtext(e.target.value)
@@ -89,7 +89,7 @@ const onlineStatus = useOnlineStatus();
 
 
                     <div className="flex items-center hover:scale-105 justify-center ml-2 flex-shrink-0">
-                    <button className="search-btn py-3.5 flex px-4 font-semibold font-oswald bg-orange-600 border-b-neutral-950 rounded-lg
+                    <button className="search-btn h-12 py-3.5 flex px-4 font-semibold font-oswald bg-orange-600 border-b-neutral-950 rounded-lg
                     transform duration-200 transition-all ease-in-out opacity-0 animate-in-1 hover:shadow-xl 
                      hover:text-white scale-105 focus:outline-none focus:ring-2 focus:ring-black"
                      
@@ -101,9 +101,9 @@ const onlineStatus = useOnlineStatus();
                          const filteredRestaurant = listOfRestaurant.filter((res)=>res.info.name.toLowerCase().includes(searchtext.toLowerCase()) );
                          setFilteredRestaurant(filteredRestaurant);
                      }}
-                     > <FaSearch className="items-center justify-center mr-2" /></button> 
+                     > <FaSearch className="items-center justify-center mr-2 text-lg sm:text-xl " /></button> 
                  </div></div>
-                 <div className=" items-center ml-80 text-white bg-orange-600 px-4 py-2 rounded-lg 
+                 <div className=" items-center flex flex-shrink-0 ml-80 text-white bg-orange-600 px-4 py-2 rounded-lg 
                                shadow-md hover:bg-green-700 hover:shadow-lg hover:scale-105
                                transition-all duration-300 ease-in-out focus-within:ring-2 focus-within:ring-black">
                     
@@ -113,7 +113,7 @@ const onlineStatus = useOnlineStatus();
                     onChange={() =>
                         setTopRatedRestaurant(!topRatedRestaurant)
                     }/>
-                    <IoStar className="ml-3 "/></div>
+                    <IoStar className="ml-2 text-lg sm:text-xl"/></div>
                
                  {/* <div className="justify-center items-center ml-10 "> */}
                  {/* <button className="filter-btn p-2 m-0.5 font-oswald border-black bg-orange-600 active:text-white rounded-lg transform duration-300 
@@ -143,7 +143,7 @@ const onlineStatus = useOnlineStatus();
                
 
 
-            <div className="res-container flex flex-wrap justify-center items-center">
+            <div className="res-container  flex flex-wrap gap-6 justify-center items-center">
             {filteredRestaurant.map((restaurant) => (
                 <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
                 {   

@@ -16,8 +16,8 @@ module.exports = {
     },
     keyframes: {
         shimmer:{
-          '0%':{backgroundPosition:'-1000px'},
-          '100%':{backgroundPosition:'1000px'}}
+          '0%':{backgroundPosition:'-1000px 0'},
+          '100%':{backgroundPosition:'1000px 0'}}
         },
 
         fadeInUp: {
