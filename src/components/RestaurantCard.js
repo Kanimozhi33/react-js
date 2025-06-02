@@ -1,10 +1,10 @@
 import { CDN_URL } from "../utils/constants";
 import { useContext } from "react";
-import User from "./User";
+// import User from "./User";
 import UserContext from "../utils/UserContext";
 import { RiStarSFill } from "react-icons/ri";
 import { MdTimer } from "react-icons/md";
-import { FaIndianRupeeSign } from "react-icons/fa6";
+// import { FaIndianRupeeSign } from "react-icons/fa6";
 
 const RestaurantCard = (props) =>{
     const {resData} = props;

@@ -5,7 +5,7 @@ import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus"; 
 import Top_Rated from "./Top_rated";
 import { withDiscount } from "./RestaurantCard";
-import { FaRegDotCircle } from "react-icons/fa";
+
 import { IoStar } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
 
