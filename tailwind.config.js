@@ -15,6 +15,11 @@ module.exports = {
       }
     },
     keyframes: {
+        shimmer:{
+          '0%':{backgroundPosition:'-1000px'},
+          '100%':{backgroundPosition:'1000px'}}
+        },
+
         fadeInUp: {
           '0%': {
             opacity: '0',
@@ -33,11 +38,23 @@ module.exports = {
       animation: {
         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
         'fade-in': 'fadeIn 1s ease-out forwards',
+        'shimmer': 'shimmer 1.5s infinite linear',
       },
-  },
+
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/line-clamp'),
   ],
 };
+
+
+
+
+
+
+
+
+
+
+

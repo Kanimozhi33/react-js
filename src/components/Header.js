@@ -27,10 +27,10 @@ const Header = () =>{
 
 
     return (
-        <div className="  flex justify-between bg-orange-600 shadow-lg max-h-[90px]  transform transition-all duration-150 ">
-            <div className="h-15 w-20 flex m-5 items-center  ">
+        <div className="  flex justify-between bg-orange-600 shadow-lg max-h-[120px]  transform transition-all duration-150 ">
+            <div className=" w-20 flex m-5 items-center  ">
                 
-                <label className="p-5 font-bold text-4xl opacity-0 animate-in-1"><Link to="/"><GiNoodles /></Link></label>
+                <label className="p-5 font-bold text-4xl opacity-0 animate-in-1"><Link to="/" title="Home"><GiNoodles /></Link></label>
                 <h1 className=" items-center justify-center font-caveat flex-wrap font-semibold text-3xl opacity-0 animate-in-1"> MEAL MINIT</h1>
                 </div>
             

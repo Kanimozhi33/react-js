@@ -3,6 +3,9 @@ import { useParams } from "react-router";
 import { useState } from "react";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import ResCategory from "./ResCategory";
+import { RiStarSFill } from "react-icons/ri";
+
+
 
 const RestaurantMenu = () =>{
     
@@ -21,7 +24,7 @@ const RestaurantMenu = () =>{
     const {text} = 
         resInfo?.data?.cards[0]?.card?.card;
     
-    const { cuisines} = 
+    const { cuisines,avgRating} = 
         resInfo?.data?.cards[2]?.card?.card?.info;
     const {itemCards} = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card;
 
@@ -32,14 +35,14 @@ const RestaurantMenu = () =>{
 
     // console.log(categories);
     return (
-        <div className="text-center bg-gray-200 font-oswald">
-            <div className="bg-black rounded-b-full text-orange-600 p-10 ">
+        <div className="text-center bg-black font-oswald ">
+            <div className="bg-gray-300 rounded-b-full w-[600px] mx-auto p-10 ">
                 
             <div>
-            <h2 className="font-extrabold  text-2xl ">{text}</h2>
+            <h2 className="font-extrabold opacity-0 animate-in-1 text-2xl ">{text}</h2>
             </div>
             
-            <h3 className="font-bold text-lg">{cuisines.join(", ")}</h3>
+            <h3 className="font-bold flex items-center opacity-0 animate-in-1 justify-center text-gray-700 text-lg">{cuisines.join(", ")} |  <RiStarSFill className="mr-1 ml-1 text-orange-600"/> {avgRating}</h3>
             </div>
             {categories.map((category,index) => 
             (

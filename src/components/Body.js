@@ -75,19 +75,21 @@ const onlineStatus = useOnlineStatus();
     return (
         <div className="bg-black py-8 mx-auto justify-center items-center ">
             <div className="items-center justify-center flex-auto max-w-[200px]">
-                <div className= " flex p-4  ">
-                   <div> <input 
+                <div className= " flex p-10  ">
+               <div className="flex  justify-between">
+                   <div className="w-full sm:w-auto flex-grow"> <input 
                     type = "text"
                     data-testid="searchInput"
                     className=" rounded-lg transform border-orange-600 flex-grow text-blue-950  font-libre ease-in-out placeholder-gray-400:
-                    duration-300 transition-all opacity-0 animate-in-1 text-bold focus:outline-none focus:ring-4 focus:ring-orange-600 focus:ring-opacity-75 focus:border-orange-500" value={searchtext} 
+                    duration-300 transition-all opacity-0 animate-in-1 text-bold focus:outline-none focus:ring-4 focus:ring-orange-600 
+                    focus:ring-opacity-75 focus:border-orange-500" value={searchtext} 
                     onChange={(e) => setsearchtext(e.target.value)
                         
                     }/></div>
 
 
-                    <div className="flex items-center hover:scale-105 justify-center ml-2">
-                    <button className="search-btn py-3 flex px-6 font-semibold font-oswald bg-orange-600 border-b-neutral-950 rounded-lg
+                    <div className="flex items-center hover:scale-105 justify-center ml-2 flex-shrink-0">
+                    <button className="search-btn py-3.5 flex px-4 font-semibold font-oswald bg-orange-600 border-b-neutral-950 rounded-lg
                     transform duration-200 transition-all ease-in-out opacity-0 animate-in-1 hover:shadow-xl 
                      hover:text-white scale-105 focus:outline-none focus:ring-2 focus:ring-black"
                      
@@ -99,11 +101,11 @@ const onlineStatus = useOnlineStatus();
                          const filteredRestaurant = listOfRestaurant.filter((res)=>res.info.name.toLowerCase().includes(searchtext.toLowerCase()) );
                          setFilteredRestaurant(filteredRestaurant);
                      }}
-                     > <FaSearch className="items-center justify-center mr-2" /> Search</button> 
-                 </div>
-                 <div className="flex checkbox items-center text-black justify-center ml-10 focus:outline-none
-                 px-6 py-3 font-oswald border-black bg-orange-600 active:text-white rounded-lg transform duration-300 
-                 transition-all opacity-0 animate-in-1 focus:bg-orange-700">
+                     > <FaSearch className="items-center justify-center mr-2" /></button> 
+                 </div></div>
+                 <div className=" items-center ml-80 text-white bg-orange-600 px-4 py-2 rounded-lg 
+                               shadow-md hover:bg-green-700 hover:shadow-lg hover:scale-105
+                               transition-all duration-300 ease-in-out focus-within:ring-2 focus-within:ring-black">
                     
                     <Top_Rated
                     label= {"Top" + "Rated"} 
@@ -111,8 +113,8 @@ const onlineStatus = useOnlineStatus();
                     onChange={() =>
                         setTopRatedRestaurant(!topRatedRestaurant)
                     }/>
-                    <IoStar className="ml-4"/>
-                 </div>
+                    <IoStar className="ml-3 "/></div>
+               
                  {/* <div className="justify-center items-center ml-10 "> */}
                  {/* <button className="filter-btn p-2 m-0.5 font-oswald border-black bg-orange-600 active:text-white rounded-lg transform duration-300 
                  transition-all opacity-0 animate-in-1 focus:bg-orange-700" onClick={()=>
