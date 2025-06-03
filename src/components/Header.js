@@ -1,6 +1,6 @@
 // import { useState, useContext } from "react";
 import { Link } from "react-router";
-// import useOnlineStatus from "../utils/useOnlineStatus";
+import useOnlineStatus from "../utils/useOnlineStatus";
 // import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 import { RiHome2Fill } from "react-icons/ri";
@@ -17,13 +17,13 @@ const Header = () =>{
 // if no dependancy array , useeffect ia been called every componenet render
 // if the depency array is empty = [] , useeffect is called only once
 // if dependancy is not empty = [btnName], useeffect is called every time the value of btnName changes(updated)
-    // const onlineStatus = useOnlineStatus();
+const onlineStatus = useOnlineStatus();
 
     // const {loggedInUser} = useContext(UserContext);
 // subcribing to the store
     const cartItems = useSelector((store) => store.cart.item);
 
-
+//  {onlineStatus ? }
 
 
     return (

@@ -43,7 +43,7 @@ const handleAddItem = (item) => {
                     <p className=" pl-5 text-gray-200 whitespace-normal text-sm font-light line-clamp-1 overflow-ellipsis ">
                         {item.card.info.description}
                     </p>
-                    <hr className=" "></hr>
+                    <hr className=" mt-5"></hr>
                 
             </div> ))} 
             

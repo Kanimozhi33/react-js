@@ -5,7 +5,7 @@ import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus"; 
 import Top_Rated from "./Top_rated";
 import { withDiscount } from "./RestaurantCard";
-
+import { HiStatusOffline } from "react-icons/hi";
 import { IoStar } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
 
@@ -62,9 +62,14 @@ useEffect(() => {
 
 const onlineStatus = useOnlineStatus();
    if (onlineStatus === false) 
-     return( <h1>
-        looks like u r offline, pls check your internet connection
-     </h1>);
+     return(  <div className="bg-black min-h-screen ">
+                 <div className="text-orange-600 text-center items-center font-bebas text-5xl pt-[100px] mx-auto">
+                     <HiStatusOffline className="text-center justify-center items-center mx-auto " />
+                     </div>
+                 <div className="text-gray-500 text-2xl text-center font-oswald mt-10">
+                    <h1>looks like you are offline, please connect to your internet to proceed!!!</h1>
+                 </div>
+             </div>)
    
 //    const {loggedInUser,setUserName } = useContext(UserContext);
    //conditional rendering: if the list of restaurants is empty, show the shimmer effect
@@ -75,7 +80,7 @@ const onlineStatus = useOnlineStatus();
     return (
         <div className="bg-black py-8 px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row items-center justify-between max-w-6xl mx-auto space-y-4 sm:space-y-0 sm:space-x-8 mb-10">
-                <div className= "flex flex-col sm:flex-row items-center w-full sm:w-auto space-y-3 sm:space-y-0 sm:space-x-3">
+                <div className= "flex flex-col sm:flex-row items-center w-full sm:w-auto space-y-5 sm:space-y-0 sm:space-x-3 justify-between">
                <div className="flex text-center items-center mx-auto justify-center">
                    <div className="w-full sm:w-auto flex-grow"> <input 
                     type = "text"
@@ -103,7 +108,7 @@ const onlineStatus = useOnlineStatus();
                      }}
                      > <FaSearch className="items-center justify-center mr-2 text-lg sm:text-xl " /></button> 
                  </div></div>
-                 <div className=" items-center flex flex-shrink-0 ml-80 text-white bg-orange-600 px-4 py-2 rounded-lg 
+                 <div className=" items-center flex flex-shrink-0 ml-80 text-white opacity-0 animate-in-1 bg-orange-600 px-4 py-2 rounded-lg 
                                shadow-md hover:bg-green-700 hover:shadow-lg hover:scale-105
                                transition-all duration-300 ease-in-out focus-within:ring-2 focus-within:ring-black">
                     

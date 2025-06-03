@@ -6,12 +6,12 @@ import React from 'react';
 const Shimmer = () => {
     return (
     
-        <div className="whole-body pt-[50px] bg-black min-h-screen items-center justify-center flex-auto mx-auto">
+        <div className="whole-body pt-[50px] bg-black min-h-screen items-center  flex-auto mx-auto">
             
              <div className="flex justify-start items-start ">
-                <div className="search-bar w-[350px] bg-gray-200  animate-pulse duration-300 opacity-80 h-[50px] rounded-2xl m-5 "></div>
-                <div className="srch-btn w-[140px]  bg-gray-200 animate-pulse h-[50px] opacity-80 rounded-2xl m-5"></div>
-                <div className="filter w-[100px]  bg-gray-200 animate-pulse h-[50px] opacity-80  rounded-2xl m-5"></div>
+                <div className="search-bar w-[350px] bg-gray-200  animate-pulse duration-300 opacity-80 h-[50px] rounded-2xl m-2 "></div>
+                <div className="srch-btn w-[140px]  bg-gray-200 animate-pulse h-[50px] opacity-80 rounded-2xl m-2"></div>
+                <div className="filter w-[100px]  bg-gray-200 animate-pulse h-[50px] opacity-80  rounded-2xl m-2"></div>
                 
              </div>
 
