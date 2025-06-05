@@ -20,7 +20,10 @@ const [filteredRestaurant,setFilteredRestaurant] = useState([]);
 
 const [topRatedRestaurant, setTopRatedRestaurant] = useState(false);
 
-const [searchtext, setsearchtext] = useState();
+const [searchtext, setsearchtext] = useState("");
+
+const [searchQuery, setSearchQuery] = useState("");
+
 
 const RestaurantCardwithDiscount = withDiscount(RestaurantCard);
 
@@ -49,8 +52,8 @@ const Top_Rate = 4.4;
 useEffect(() => {
     let currentList = [...listOfRestaurant];
 
-    if (searchtext){
-        currentList = currentList.filter((res)=> res.info.name.toLowerCase().includes(searchtext.toLowerCase()));
+    if (searchQuery){
+        currentList = currentList.filter((res)=> res.info.name.toLowerCase().includes(searchQuery.toLowerCase()));
     }
 
     if (topRatedRestaurant) {
@@ -58,11 +61,11 @@ useEffect(() => {
     }
 
     setFilteredRestaurant(currentList);
-}, [searchtext, topRatedRestaurant, listOfRestaurant])
+}, [searchQuery, topRatedRestaurant, listOfRestaurant])
 
 const onlineStatus = useOnlineStatus();
    if (onlineStatus === false) 
-     return(  <div className="bg-black min-h-screen ">
+     return(  <div className="bg-white min-h-screen ">
                  <div className="text-orange-600 text-center items-center font-bebas text-5xl pt-[100px] mx-auto">
                      <HiStatusOffline className="text-center justify-center items-center mx-auto " />
                      </div>
@@ -78,7 +81,7 @@ const onlineStatus = useOnlineStatus();
     }
 
     return (
-        <div className="bg-black py-8 px-4 sm:px-6 lg:px-8">
+        <div className="bg-white py-8 px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row items-center justify-between max-w-6xl mx-auto space-y-4 sm:space-y-0 sm:space-x-8 mb-10">
                 <div className= "flex flex-col sm:flex-row items-center w-full sm:w-auto space-y-5 sm:space-y-0 sm:space-x-3 justify-between">
                <div className="flex text-center items-center mx-auto justify-center">
@@ -94,23 +97,23 @@ const onlineStatus = useOnlineStatus();
 
 
                     <div className="flex items-center hover:scale-105 justify-center ml-2 flex-shrink-0">
-                    <button className="search-btn h-12 py-3.5 flex px-4 font-semibold font-oswald bg-orange-600 border-b-neutral-950 rounded-lg
+                    <button className="search-btn h-12 py-3.5 flex px-4 font-semibold font-oswald bg-orange-600  rounded-lg
                     transform duration-200 transition-all ease-in-out opacity-0 animate-in-1 hover:shadow-xl 
-                     hover:text-white scale-105 focus:outline-none focus:ring-2 focus:ring-black"
+                     hover:text-white scale-105 focus:outline-none  "
                      
                      
                     
                      onClick={()=>{
                          
- 
-                         const filteredRestaurant = listOfRestaurant.filter((res)=>res.info.name.toLowerCase().includes(searchtext.toLowerCase()) );
-                         setFilteredRestaurant(filteredRestaurant);
+                        setSearchQuery(searchtext);
+                        //  const filteredRestaurant = listOfRestaurant.filter((res)=>res.info.name.toLowerCase().includes(searchtext.toLowerCase()) );
+                        //  setFilteredRestaurant(filteredRestaurant);
                      }}
                      > <FaSearch className="items-center justify-center mr-2 text-lg sm:text-xl " /></button> 
                  </div></div>
                  <div className=" items-center flex flex-shrink-0 ml-80 text-white opacity-0 animate-in-1 bg-orange-600 px-4 py-2 rounded-lg 
                                shadow-md hover:bg-green-700 hover:shadow-lg hover:scale-105
-                               transition-all duration-300 ease-in-out focus-within:ring-2 focus-within:ring-black">
+                               transition-all duration-300 ease-in-out ">
                     
                     <Top_Rated
                     label= {"Top" + "Rated"} 

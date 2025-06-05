@@ -23,7 +23,7 @@ const handleAddItem = (item) => {
                  className="p-2  text-left rounded-2xl mx-auto  transition duration-300">
 
                     <div data-testid = "fooditems "
-                    className="flex justify-between text-gray-200 mt-10 ">
+                    className="flex justify-between text-gray-700 mt-10 ">
                         <span 
                         className="p-5 font-kanit font-bold text-2xl">{item.card.info.name}</span>
                     <div
@@ -34,16 +34,16 @@ const handleAddItem = (item) => {
                      rounded-2xl cursor-pointer bg-orange-600 border-2 border-transparent  hover:border-white active:bg-white active:text-black">ADD +</button>)}
                     <img
                     alt="item-img" src={ITEMS_URL+item.card.info.imageId} 
-                    className=" flex w-[150px] h-[100px] bg-gray-200 rounded-2xl "></img></div>
+                    className=" flex w-[150px] h-[100px]  rounded-2xl "></img></div>
                     
                 </div>
                 <span className="font-bold p-5">  
                     ₹ {item.card.info.price ? item.card.info.price/100 : item.card.info.defaultPrice /100}</span>
 
-                    <p className=" pl-5 text-gray-200 whitespace-normal text-sm font-light line-clamp-1 overflow-ellipsis ">
+                    <p className=" pl-5 text-gray-700 whitespace-normal text-sm font-light line-clamp-1 overflow-ellipsis ">
                         {item.card.info.description}
                     </p>
-                    <hr className=" mt-5"></hr>
+                    <hr className=" mt-5 text-gray-700"></hr>
                 
             </div> ))} 
             

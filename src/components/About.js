@@ -8,14 +8,14 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 const About = () => {
     return (
-        <div className="bg-black">
+        <div className="bg-gray-200">
             <div className="p-10 text-gray-700 font-bebas bg-gray-300 text-4xl w-[600px] mx-auto items-center justify-center rounded-b-full">
                 <h1 className="items-center text-center font-bold font-bebas
                  ml-4 mt-4 transform opacity-0 animate-in-1 ">ABOUT</h1>
                  
             </div>
            <div className="p-10  justify-center items-center font-sans font-semibold text-balance  rounded-xl">
-           <p className=" max-w-screen-2xl w-8/12 mx-auto md:w-6/12  text-lg leading-relaxed text-gray-500 text-justify transform opacity-0 animate-in-2">
+           <p className=" max-w-screen-2xl w-8/12 mx-auto md:w-6/12  text-lg leading-relaxed text-gray-700 text-justify transform opacity-0 animate-in-2">
             Craving your favorite local eats delivered swiftly? Meal Minit is your answer, passionately 
             connecting you with the best restaurants right to your doorstep. Whether it's a solo snack or
              a group gathering, effortlessly explore diverse menus and order in seconds. Powering this seamless

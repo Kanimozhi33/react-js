@@ -31,7 +31,7 @@ const onlineStatus = useOnlineStatus();
             <div className=" w-20 flex m-5 items-center  ">
                 
                 <label className="p-5 font-bold text-4xl opacity-0 animate-in-1"><Link to="/" title="Home"><GiNoodles /></Link></label>
-                <h1 className=" items-center justify-center font-caveat flex-wrap font-semibold text-3xl opacity-0 animate-in-1"> MEAL MINIT</h1>
+                <h1 className=" items-center justify-center font-caveat flex-wrap font-bold text-3xl opacity-0 animate-in-1"> MEAL MINIT</h1>
                 </div>
             
             <div className="p-10 flex items-center space-x-5 bg-orange-600  ">

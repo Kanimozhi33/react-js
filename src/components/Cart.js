@@ -13,7 +13,7 @@ const handleClearCart = () =>{
 const cartItems = useSelector((store) => store.cart.item);
 
     return (
-    <div className=" min-h-screen bg-black tranform transition duration-300  items-center justify-between">
+    <div className=" min-h-screen bg-gray-200 tranform transition duration-300  items-center justify-between">
         <div className="p-10 text-gray-700 font-bebas bg-gray-300 text-4xl w-[600px] mx-auto items-center rounded-b-full">
             <h1 className="p-5 text-center text-3xl font-bebas font-bold  opacity-0 animate-in-1">CART</h1> 
         </div>
@@ -22,7 +22,7 @@ const cartItems = useSelector((store) => store.cart.item);
        <div className="p-10 max-w-4xl mx-auto sm:px-6">
         
         {cartItems.length === 0 ? (
-        <div className="text-center mx-auto min-h-[400px]"><h1 className="font-bold  mb-6 text-gray-500 text-3xl font-oswald text-center opacity-0 animate-in-2">
+        <div className="text-center mx-auto min-h-[400px]"><h1 className="font-bold  mb-6 text-gray-700 text-3xl font-oswald text-center opacity-0 animate-in-2">
             Your Cart is empty...<br></br>
                  Add items to your cart
             <TbMoodEmpty className="text-9xl mx-auto mt-10 text-orange-600"/>
