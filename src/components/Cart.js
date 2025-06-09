@@ -13,8 +13,8 @@ const handleClearCart = () =>{
 const cartItems = useSelector((store) => store.cart.item);
 
     return (
-    <div className=" min-h-screen bg-gray-200 tranform transition duration-300  items-center justify-between">
-        <div className="p-10 text-gray-700 font-bebas bg-gray-300 text-4xl w-[600px] mx-auto items-center rounded-b-full">
+    <div className=" min-h-screen tranform transition duration-300 bg-gray-200 items-center justify-between">
+        <div className="p-10 text-gray-700 font-bebas bg-gray-50 shadow-lg text-4xl w-[600px] mx-auto items-center rounded-b-full">
             <h1 className="p-5 text-center text-3xl font-bebas font-bold  opacity-0 animate-in-1">CART</h1> 
         </div>
        
@@ -29,7 +29,7 @@ const cartItems = useSelector((store) => store.cart.item);
         </h1></div>
         ):(
         <div className="w-full md:w-8/12  lg:w-6/12 h-auto items-center mx-auto justify-center text-center ">
-            <h1 className="text-gray-500 text-xl text-center font-bold pb-10  my-auto border-1 border-orange-600">Your Items</h1>
+            <h1 className="text-gray-700 text-xl text-center font-bold pb-10  my-auto border-1  border-orange-600">Items</h1>
             <ItemList items={cartItems} showButton= {false}/>
             <button className="border-black m-2 mb-5 text-left font-bold rounded-2xl bg-orange-600 hover:bg-black hover:scale-105 hover:text-orange-600 hover:border-white 
         border-2 active:bg-white active:text-black opacity-0 font-oswald animate-in-2 p-3"

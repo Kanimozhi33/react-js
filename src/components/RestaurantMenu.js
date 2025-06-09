@@ -35,8 +35,8 @@ const RestaurantMenu = () =>{
 
     // console.log(categories);
     return (
-        <div className="text-center bg-gray-50 font-oswald ">
-            <div className=" bg-gradient-to-r form-orange-500 to-red-500 rounded-b-3xl text-white w-full mx-auto p-8 shadow-lg md:roundedb-full md:w-[700px]  ">
+        <div className="text-center bg-gray-200 font-oswald ">
+            <div className=" bg-gray-50 to-red-500 rounded-b-full text-gray-900 w-full mx-auto p-8 shadow-lg md:roundedb-full md:w-[700px]  ">
                 
             <div>
             <h2 className="font-extrabold opacity-0 animate-in-1 text-2xl ">{text}</h2>
@@ -44,7 +44,7 @@ const RestaurantMenu = () =>{
             
             <h3 className="font-bold flex items-center opacity-0 animate-in-1 justify-center text-gray-700 text-lg">{cuisines.join(", ")} |  <RiStarSFill className="mr-1 ml-1 text-amber-500 text-xl"/> {avgRating}</h3>
             </div>
-            <div className="max-w-4xl mx-auto mt-8 px-4">
+            <div className="max-w-4xl mx-auto mt-8 px-4 bg-gray-200">
             {categories.map((category,index) => 
             (
                 <ResCategory key={category?.card?.card?.title} 

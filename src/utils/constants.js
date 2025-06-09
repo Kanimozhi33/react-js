@@ -16,3 +16,5 @@ export const GITHUB = "https://github.com/Kanimozhi33";
 export const PORTFOLIO = "https://kanimozhi33.github.io/kanimozhi33/";
 
 export const MAIL = "mailto:vmkanimozhi9033@gmail.com"
+
+export const API_URL = "https://foodapi.vercel.app/restaurants?lat=12.8996&lng=80.2209";

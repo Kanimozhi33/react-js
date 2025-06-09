@@ -64,7 +64,7 @@ const onlineStatus = useOnlineStatus();
                     <li className="relative flex items-center justify-center font-bold"> 
                         <Link to="/cart" title="view cart" className="hover:bg-orange-0 flex items-center"> 
                         <BsCartCheckFill className="h-6 w-6" /> 
-                        <label className="absolute top-[-0.5rem] right-[-0.5rem] badge w-5 h-5 bg-stone-300 rounded-full text-black text-xs font-semibold flex items-center justify-center">
+                        <label className="absolute top-[-0.5rem] right-[-0.5rem] badge w-5 h-5 bg-black rounded-full text-gray-300 text-xs font-semibold flex items-center justify-center">
                             {cartItems.length}
                         </label>
                         </Link>

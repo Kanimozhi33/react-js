@@ -9,7 +9,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 const About = () => {
     return (
         <div className="bg-gray-200">
-            <div className="p-10 text-gray-700 font-bebas bg-gray-300 text-4xl w-[600px] mx-auto items-center justify-center rounded-b-full">
+            <div className="p-10 text-gray-700 font-bebas bg-gray-50 shadow-lg text-4xl w-[600px] mx-auto items-center justify-center rounded-b-full">
                 <h1 className="items-center text-center font-bold font-bebas
                  ml-4 mt-4 transform opacity-0 animate-in-1 ">ABOUT</h1>
                  
