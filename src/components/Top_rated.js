@@ -12,7 +12,7 @@ const Top_Rated = ({label, checked, onChange}) => {
             className="form-checkbox h-5 w-5 text-orange-500 rounded  
             flex focus:outline-none
             border-gray-300 transition duration-150 ease-in-out"/>
-       <label htmlFor={id} className="ml-2 text-gray-700 font-bold   cursor-pointer">
+       <label htmlFor={id} className="ml-2 text-gray-700 hover:text-amber-500 font-bold   cursor-pointer">
             {label}
         </label> 
         </div>

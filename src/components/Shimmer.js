@@ -6,7 +6,7 @@ import React from 'react';
 const Shimmer = () => {
     return (
     
-        <div className="whole-body pt-[50px] bg-gray-200 min-h-screen items-center  flex-auto mx-auto">
+        <div className="whole-body pt-[50px] bg-gray-50 min-h-screen items-center  flex-auto mx-auto">
             
              <div className="flex justify-start items-start ">
                 <div className="search-bar w-[350px] bg-gray-200  animate-pulse duration-300 opacity-80 h-[50px] rounded-2xl m-2 "></div>
@@ -16,7 +16,7 @@ const Shimmer = () => {
              </div>
 
              <div className="card-container flex flex-wrap p-10 rounded-2xl items-center justify-center gap-10 ">
-                {Array(12)
+                {Array(20)
                     .fill("")
                     .map((e, index) => (
                         <div key={index} className="card w-[250px] rounded-2xl h-[300px] bg-gray-100 opacity-80 animate-pulse m-2">

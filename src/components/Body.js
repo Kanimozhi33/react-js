@@ -112,7 +112,7 @@ const onlineStatus = useOnlineStatus();
                      > <FaSearch className="items-center justify-center mr-2 text-lg sm:text-xl " /></button> 
                  </div></div>
                  <div className=" items-center flex flex-shrink-0 ml-80 text-white opacity-0 animate-in-1 bg-orange-600 px-4 py-2 rounded-lg 
-                               shadow-md hover:bg-blue-950 hover:shadow-lg hover:scale-105
+                               shadow-md hover:bg-blue-950  hover:text-amber-500 hover:shadow-lg hover:scale-105
                                transition-all duration-300 ease-in-out ">
                     
                     <Top_Rated
