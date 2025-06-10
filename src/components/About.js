@@ -29,10 +29,10 @@ const About = () => {
 </div> 
 <div className="max-w-2xl pb-10  mx-auto text-lg leading-relaxed text-gray-500 justify-left">
     <div className="flex items-center w-6/12 mx-auto">
-        <span className="font-bold transform opacity-0 text-center   animate-in-1">feel free to visit my</span>
+        <span className="flex font-bold transform opacity-0 text-center   animate-in-1">feel free to visit my</span>
         <div className="flex items-center ml-2 bg-orange-600 text-black rounded-2xl p-2 hover:text-white hover:border-white hover:shadow-xl font-sans font-bold
         focus:outline-none focus:ring-2 focus:ring-gray-400 active:bg-gray-100 active:text-gray-900 active:scale-95 transition duration-75 ease-in-out transform opacity-0 animate-in-1">
-             PORTFOLIO<FaExternalLinkAlt className="ml-4" /></div> </div>
+            <a href="https://port-folio-roan-nine.vercel.app/ " className="flex items-center" >PORTFOLIO<FaExternalLinkAlt className="ml-4 text-center justify-center items-center" /> </a> </div> </div>
     
 </div>
         </div> 
